@@ -1,0 +1,60 @@
+.card-image-top{
+    height: 140px;
+    width: 115px;
+    margin-left: 165px;
+    margin-top: -1px;
+}
+
+.match{
+    margin-left: 125px;
+}
+
+.design{
+    margin-left: 118px;
+    font-size: 15px;
+}
+
+.card{
+    border-radius: 8px;
+}
+
+pre{
+    font-family: inherit;
+}
+
+.confirm{
+    height: 110px;
+    width: 110px;
+    margin-left: 165px;
+    border-radius: 85px;
+    margin-top: 17px;
+}
+
+.request{
+    margin-top: 25px;
+    height: 105px;
+}
+
+.place{
+    margin-left: 120px;
+    margin-top: 9px;
+}
+
+.handle{
+    margin-left: 130px;
+    font-size: 15px;
+}
+
+.tick{
+    height: 30px;
+    width: 30px;
+   
+}
+
+.head{
+    margin-top: -40px;
+}
+
+.adj{
+    margin-top: -25px;
+}
