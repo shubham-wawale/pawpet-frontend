@@ -16,13 +16,13 @@ function App() {
     <div className="App">
       <Router>
       <Switch>
-          <Route path="/Dashboard">
+          <Route path="/dashboard">
             <Dashboard />
           </Route>
-          <Route path="/Profile">
+          <Route path="/profile">
             <Profile />
           </Route>
-          <Route path="/ServicesTabs">
+          <Route path="/servicesTabs">
             <ChakraProvider>
             <ServicesTabs />
             </ChakraProvider>
