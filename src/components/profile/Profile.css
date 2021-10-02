@@ -2,7 +2,7 @@
   text-align: center;
 } */
 .bgimg{
-  background-image: url("./bg.jpg");
+  background-image: url('../profile/bg.jpg');
   background-repeat: no-repeat;
   height: 100vh;
   background-position: center;
