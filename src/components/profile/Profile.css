@@ -2,7 +2,7 @@
   text-align: center;
 } */
 .bgimg{
-  background-image: url('../profile/bg.jpg');
+  background-image: url('./bg.jpg');
   background-repeat: no-repeat;
   height: 100vh;
   background-position: center;
@@ -43,13 +43,4 @@
 }
 .custom-btn:hover{
   background:#53B8BB !important;
-}
-
-.card{
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
-  padding: 15px;
-  position: relative;
-  border-radius: 0.8rem;
-  width: 75%;
 }

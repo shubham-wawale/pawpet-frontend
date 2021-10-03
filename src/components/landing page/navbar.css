@@ -1,0 +1,65 @@
+.navbar{
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+}
+
+.ichon{
+    width: 200px;
+    float: left;
+    height: 70px;
+}
+
+.lohgo{
+    color: #00bfa6;
+    font-size: 35px;
+    padding-left: 15px;
+    float: left;
+    padding-top: 17px;
+    font-weight: bold;
+    font-family:cursive;
+} 
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+}
+
+ul{
+    float:left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -220px;
+    
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+} 
+
+.crtacc{
+    width: 160px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #00bfa6;
+    transition: .4s ease;
+    color: white;
+    font-weight: bold;
+    margin-top: 17px;
+    margin-left: 55px;
+}
