@@ -4,6 +4,7 @@ import ServicesTabs from "./components/Services/Tabs";
 import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/profile/Profile";
 import Registration from "./components/petregister/Registration";
+import Landing from "./components/landing page/landing";
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,9 +21,15 @@ function App() {
           <Route path="/dashboard">
             <Dashboard />
           </Route>
+
+          <Route path="/">
+            <Landing />
+          </Route>
+
           <Route path="/profile">
             <Profile />
           </Route>
+
           <Route path="/servicesTabs">
             <ChakraProvider>
             <ServicesTabs />
@@ -33,6 +40,7 @@ function App() {
             <Registration/>
            
             </Route>
+
         </Switch>
         </Router>
     </div>
