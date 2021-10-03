@@ -1,10 +1,10 @@
 import React from 'react';
 import './login.css';
-import './main.css';
+import './landing.css';
 import Navbar from "./Navbar";
 import Login from "./login";
 
-function Main() {
+function Landing() {
   return (
     <div className="backhimg">
     <>
@@ -17,4 +17,4 @@ function Main() {
   );
 };
 
-export default Main;
+export default Landing;

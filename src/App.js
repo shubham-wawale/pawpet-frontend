@@ -3,7 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react"
 import ServicesTabs from "./components/Services/Tabs";
 import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/profile/Profile";
-import Main from "./components/login/main";
+import Landing from "./components/landing page/landing";
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,7 +22,7 @@ function App() {
           </Route>
 
           <Route path="/">
-            <Main />
+            <Landing />
           </Route>
 
           <Route path="/profile">
