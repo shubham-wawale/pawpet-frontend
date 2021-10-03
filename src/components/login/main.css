@@ -1,0 +1,9 @@
+.backhimg{
+    background-image: url('./bhackgroundh.png');
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position:center;
+    background-size: cover;
+    opacity:0.75;
+    width: 100%;
+}
