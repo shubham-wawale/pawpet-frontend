@@ -13,8 +13,8 @@ function Info() {
             <div className="col-10 mx-auto">
               <div className="row">
                 <div className="col-md-6 pt-4 order-2 order-lg-1 d-flex justify-content-center flex-column">
-                  <h2> When you need to hire someone – a pet sitter, <br /> a adopter, a dog walker, anyone – <strong>PawPet</strong> <br /> finds them for you for free.</h2>
-                  <p className="para">See price estimates and read reviews with pet sitters, pet adopter, dog walkers,<br /> and see how far your dog has walked all in the Pet app.</p>
+                  <h2> When you need to hire someone – a pet sitter, <br /> a adopter, anyone – <strong>PawPet</strong> <br /> finds them for you for free.</h2>
+                  <p className="para">See price estimates and read reviews about pet sitters or pet adopter, </p>
                 </div>
 
                 <div className="col-lg-6 order-1 order-lg-2 header-img">

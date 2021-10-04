@@ -13,8 +13,8 @@ function Remain() {
                 <div className="row">
                     <div className="col-10 mx-auto">
                         <div className="col-md-6 pt-4 order-2 order-lg-1 d-flex justify-content-center flex-column">
-                            <h2> Get pet sitters, adopters or dog walkers.</h2>
-                            <p className="para">We match your pets to trusted local pet boarding, grooming and dog walking services in India instantly.</p>
+                            <h2> Get pet sitters or pet adopters .</h2>
+                            <p className="para">We match your pets and their needs to trusted local pet sitter, pet stores and services in India instantly.</p>
                         </div>
 
 
@@ -43,9 +43,9 @@ function Remain() {
                                 <div className="card">
                                     <img src={web6} className="card-image-top" alt="..." />
                                     <div className="card-body">
-                                        <h5 className="card-title match">Match with Backers</h5>
+                                        <h5 className="card-title match">Match with Sitters</h5>
                                         <pre>
-                                            <p className="card-text handle">Get up to 5 cost estimates <br />     from pet sitters <br />         shortly.</p>
+                                            <p className="card-text handle">    See the estimates <br /> provided by pet sitters <br />       in profile.</p>
                                         </pre>
                                     </div>
                                 </div>
@@ -55,9 +55,9 @@ function Remain() {
                                 <div className="card">
                                     <img src={web7} className="card-image-top confirm" alt="..." />
                                     <div className="card-body">
-                                        <h5 className="card-title place">Confirm the Backer</h5>
+                                        <h5 className="card-title place">Confirm the Sitter</h5>
                                         <pre>
-                                            <p className="card-text design">  Proceed with the Backer if <br /> suitable otherwise inform us <br />         to meet other.</p>
+                                            <p className="card-text design"> Proceed with the Pet Sitter if <br /> suitable otherwise inform us <br />         to meet other.</p>
                                         </pre>
                                     </div>
                                 </div>

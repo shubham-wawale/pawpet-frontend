@@ -26,7 +26,7 @@ function Header() {
 
                                         <option value="pet-adoption" > Pet Adoption </option>
 
-                                        <option value="pet-walking" > Pet Walking </option>
+                                        {/* <option value="pet-walking" > Pet Walking </option> */}
 
                                         <option value="pet-sitting" > Pet Sitting </option>
 
@@ -49,7 +49,7 @@ function Header() {
 
                                         <option value="pet-adoption" > 2 </option>
 
-                                        <option value="pet-walking" > 3 </option>
+                                        {/* <option value="pet-walking" > 3 </option> */}
 
                                         <option value="pet-sitting" > 4 </option>
 
