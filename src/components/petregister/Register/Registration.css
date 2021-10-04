@@ -1,0 +1,15 @@
+.reghead h1{
+    margin-left: 100px;
+    font-weight: bold;
+    color: white;
+    padding-top: 180px;
+    font-size: 45px;
+}
+
+.reghead p{
+    margin-left: 100px;
+    font-weight: bold;
+    color: black;
+    padding-top: 15px;
+    font-size: 25px;
+}

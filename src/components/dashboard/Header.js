@@ -21,7 +21,7 @@ function Header() {
                             <div className="row py-3 mb-4 bg-div white">
                                 <div className="col-md-3">
                                     <label>I'm Looking For</label>
-                                    <select id="locate" className="form-control" >
+                                    <select id="locate" className="form-control " >
                                         <option value="Pet-sitters" > Select Service </option>
 
                                         <option value="pet-adoption" > Pet Adoption </option>
@@ -32,19 +32,19 @@ function Header() {
 
                                     </select>
 
-                                    <div className="arrow">
+                                     <div className="arrow">
                                         <img src={web9} alt="" />
-                                    </div>
+                                    </div> 
 
-                                    <div className="input-img">
-                                        {/* <img className="service-image" src="https://storage.googleapis.com/petbacker/images/cms/icons/services/house-sitting.png" alt="#" /> */}
+                                    {/* <div className="input-img">
+                                    
                                         <img className="service-image" src={web14} alt="" />
-                                    </div>
+                                    </div>  */}
                                 </div>
 
                                 <div className="col-md-3">
                                     <label>Number of Pets</label>
-                                    <select id="locate" className="form-control" >
+                                    <select id="locate" className="form-control " >
                                         <option value="Pet-sitters" > 1 </option>
 
                                         <option value="pet-adoption" > 2 </option>
@@ -62,16 +62,16 @@ function Header() {
 
                                 <div className="col-md-3">
                                     <label>Near</label>
-                                    <input type="text" className="form-control pac-target-input" id="location_search" onfocus="geolocate()" placeholder="Select your location" autocomplete="off" />
+                                    <input type="text" className="form-control pac-target-input" id="location_search" placeholder="Select your location" autocomplete="off" />
                                 
-                                    <div className="loc">
+                                    {/* <div className="loc">
                                         <img src={web10} alt="" />
-                                    </div>
+                                    </div> */}
 
                                 </div>
                                 <div className="col-md-3">
                                     <label>&nbsp;</label>
-                                    <button className="btn btn-primary col-md-12" type="button" > Search</button>
+                                    <button className="btn btn-primary col-md-12 serbut" type="button" > Search</button>
                                 
                                     <div className="search">
                                         <img src={web11} alt="" />

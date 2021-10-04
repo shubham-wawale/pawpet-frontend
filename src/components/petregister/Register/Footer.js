@@ -45,7 +45,7 @@ function Footer() {
               <li>pawpetservice@gmail.com</li>
             </ui>
             <div className="col">
-            <h4>follow us</h4>
+            <h4>Follow us</h4>
             </div>
           </div>
         </div>
@@ -57,6 +57,14 @@ function Footer() {
           </p>
         </div>
       </div>
+      <div className="ion">
+                <a href="#" class="fa fa-facebook "></a>
+                <a href="#" class="fa fa-twitter "></a>
+                <a href="#" class="fa fa-google "></a>
+                <a href="#" class="fa fa-instagram "></a>
+                <a href="#" class="fa fa-youtube "></a>
+
+                </div>
     </div>
   );
 }
