@@ -6,7 +6,7 @@ function Footer() {
     <div className="main-footer">
       <div className="container">
         <div className="row">
-         
+
           <div className="col">
             <h4>PawPet</h4>
             <ui className="list-unstyled">
@@ -18,7 +18,7 @@ function Footer() {
               <li>Privacy Policy</li>
             </ui>
           </div>
-         
+
           <div className="col">
             <h4>Our Services</h4>
             <ui className="list-unstyled">
@@ -28,16 +28,16 @@ function Footer() {
               <li>Veterinary</li>
             </ui>
           </div>
-         
+
           <div className="col">
             <h4>Get Help</h4>
             <ui className="list-unstyled">
               <li>FAQ</li>
               <li>Payment Options</li>
-            
+
             </ui>
           </div>
-         
+
           <div className="col">
             <h4>CONTACT US</h4>
             <ui className="list-unstyled">
@@ -45,7 +45,7 @@ function Footer() {
               <li>pawpetservice@gmail.com</li>
             </ui>
             <div className="col">
-            <h4>Follow us</h4>
+              <h4>Follow us</h4>
             </div>
           </div>
         </div>
@@ -58,13 +58,13 @@ function Footer() {
         </div>
       </div>
       <div className="ion">
-                <a href="#" class="fa fa-facebook "></a>
-                <a href="#" class="fa fa-twitter "></a>
-                <a href="#" class="fa fa-google "></a>
-                <a href="#" class="fa fa-instagram "></a>
-                <a href="#" class="fa fa-youtube "></a>
+        <a href="#" class="fa fa-facebook "></a>
+        <a href="#" class="fa fa-twitter "></a>
+        <a href="#" class="fa fa-google "></a>
+        <a href="#" class="fa fa-instagram "></a>
+        <a href="#" class="fa fa-youtube "></a>
 
-                </div>
+      </div>
     </div>
   );
 }

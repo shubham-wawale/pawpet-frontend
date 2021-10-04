@@ -11,10 +11,10 @@ function Registration() {
 
         <div className="reghead">
           <h1>
-            Become a Pet Sitter with PetBacker
+            Become a Pet Sitter with PawPet
           </h1>
 
-          <p>Sitting with PetBacker is a fun and flexible way to <br />
+          <p>Sitting with PawPet is a fun and flexible way to <br />
             make money while spending time with pups.</p>
 
         </div>
