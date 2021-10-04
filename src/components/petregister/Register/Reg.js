@@ -56,7 +56,7 @@ function Reg() {
                                 <div className="blank">
                                     <img src={web16} className="one" alt="..." height="70px" />
                                     <div className="card-body">
-                                        <h5 className="card-title spaces">Decide how you want to &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  work</h5>
+                                        <h5 className="card-title spaces">Decide how you want to &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    work</h5>
                                         <p className="card-text my-3">Choose your own schedule, prices, and requirements for your services. We’re there to help along the way.</p>
 
                                     </div>
