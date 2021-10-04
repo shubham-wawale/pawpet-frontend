@@ -7,7 +7,9 @@ function Login() {
         <div className="main">
             <div className="content">
                 <h1>PawPet</h1>
-                <p className="par">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br /> Itaque optio assumenda ratione explicabo excepturi, saepe placeat <br /> nesciunt dolores? Illum, nesciunt.</p>
+                <p className="par">If You're a Pet Lover, You've Come to the Right Place <br />
+                Pup, Pup, Hooray! You Leave Em, We Love Em. <br />
+                Join our growing community and find one today.</p>
                 <button className="cn">Get Started</button>
             </div>
            

@@ -10,7 +10,7 @@ function Navbar() {
         <h2 className="lohgo">PawPet</h2>
       </div>
       <div className="menu">
-        <ul>
+        <ul className="janiye">
           <li><a href="#">HOME</a></li>
           <li><a href="#">ABOUT</a></li>
           <li><a href="#">SERVICE</a></li>

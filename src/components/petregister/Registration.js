@@ -2,20 +2,23 @@
 import './Register/Reg.css'
 import Reg from './Register/Reg'
 import Footer from './Register/Footer'
-import {Box,Heading,Button,Text} from '@chakra-ui/react' 
+import './Register/Registration.css'
 function Registration() {
   return (
     <>
       <div className="background">
-        
-    
-      <div className="reghead">
-      <h2>
-    Become a Pet Sitter with PetBacker
-    </h2> 
 
-      </div>
-    
+
+        <div className="reghead">
+          <h1>
+            Become a Pet Sitter with PetBacker
+          </h1>
+
+          <p>Sitting with PetBacker is a fun and flexible way to <br />
+            make money while spending time with pups.</p>
+
+        </div>
+
       </div>
 
       <Reg />

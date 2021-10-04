@@ -14,7 +14,9 @@ function Profile() {
   <ReactBootstrap.Button variant="outline-secondary" className="custom-btn">SHOW REQUESTS</ReactBootstrap.Button>{' '}
   <ReactBootstrap.Button variant="outline-secondary" className="custom-btn">DELETE ACCOUNT</ReactBootstrap.Button>{' '}
   </div>
+  
 </>
+
   );
 }
 

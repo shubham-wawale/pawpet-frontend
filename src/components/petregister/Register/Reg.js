@@ -189,6 +189,8 @@ function Reg() {
                 
             </section>
             <div className="reg">
+                <h2>Pet Sitter Application</h2>
+                <p>We’re looking forward to hearing your responses to our questions about pet care!</p>
             <div class="mb-3">
                     <h6><label for="exampleFormControlInput1" class="form-label">Full name*</label></h6>
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name" />

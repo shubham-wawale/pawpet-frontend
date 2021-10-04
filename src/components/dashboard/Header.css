@@ -1,5 +1,5 @@
 .form-control{
-    padding-left: 40px;
+    padding:.375rem 1.6rem;
 }
 
 .search-section {
@@ -23,15 +23,10 @@
 
 }
 
+
 label {
     display: inline-block;
     margin-bottom: .5rem;
-}
-
-
-.form-control {
-    padding: .375rem 1.7rem;
-
 }
 
 option {

@@ -9,7 +9,7 @@
 .backimg{
     background-image: url('./images/dashboardbg.png');
     background-repeat: no-repeat;
-    height: 93vh;
+    height: 93.5vh;
     background-position:center;
     background-size: cover;
     opacity:0.75;

@@ -6,9 +6,9 @@
     font-size: 1.5em;
 } */
 .background{
-    background-image: url('../Images/twocat.jpg');
+    background-image: url('../Images/twocat.png');
     background-repeat: no-repeat;
-    height: 93vh;
+    height: 81.5vh;
     background-position:center;
     background-size: cover;
     opacity:0.75;
@@ -57,7 +57,7 @@
     margin-top: -1px;
 }
 
-.wut{
+/* .wut{
     height: 230px;
     margin-top: -1490px;
     margin-left: 1050px;
@@ -79,6 +79,30 @@
     height: 240px;
     margin-top: -2100px;
     margin-left: -290px;
+} */
+
+.wut{
+    height: 230px;
+    margin-top: -1260px;
+    margin-left: 1300px;
+}
+
+.wat{
+    height: 230px;
+    margin-top: -400px;
+    margin-left: -139px;
+}
+
+.wet{
+    height: 230px;
+    margin-top: -940px;
+    margin-left: 135px;
+}
+
+.wot{
+    height: 240px;
+    margin-top: -1710px;
+    margin-left: -290px;
 }
 
 .inc{
@@ -95,10 +119,23 @@
 
 }
 .reg{
+    margin-top: 50px;
     margin-left: 150px;
     margin-right: 180px;
 
 }
+
+.reg p{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.reg h2{
+margin-left: 550px;
+color: brown;
+
+}
+
 @media screen and (max-width: 768px) {
     figcaption{
         position: inherit;
