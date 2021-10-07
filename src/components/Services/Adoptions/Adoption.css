@@ -1,0 +1,9 @@
+.adoptionResultScroll::-webkit-scrollbar {
+    display: none;
+}
+
+.adoptionCard:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.1s;
+}

@@ -1,23 +1,28 @@
 import React from "react"
-import Search from "./Search/Search"
+import Adoptions from "./Adoptions/Adoptions"
+import PetStores from "./PetStores/PetStores"
+import Veterinaries from "./Veterinaries/Veterinaries"
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 
 const ServicesTabs = () => {
     return (
         <>
-            <Tabs defaultIndex={1} style={{margin: "1rem"}} variant="soft-rounded" colorScheme="teal">
+            <Tabs defaultIndex={0} style={{margin: "1rem"}} variant="soft-rounded" colorScheme="green">
               <TabList>
-                <Tab>PET SITTNG</Tab>
                 <Tab>ADOPTIONS</Tab>
                 <Tab>VETERINARY</Tab>
                 <Tab>PET STORES</Tab>
+                <Tab>PET SITTNG</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel>
-                  
+                  <Adoptions />
                 </TabPanel>
                 <TabPanel>
-                  <p><Search /></p>
+                  <Veterinaries />
+                </TabPanel>
+                <TabPanel>
+                  <PetStores />
                 </TabPanel>
               </TabPanels>
             </Tabs>
