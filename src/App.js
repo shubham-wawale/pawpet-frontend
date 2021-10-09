@@ -5,6 +5,9 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/profile/Profile";
 import Registration from "./components/petregister/Registration";
 import Landing from "./components/landing page/landing";
+import SitterProfile from "./components/profile/SitterProfile";
+import UserProfile from "./components/profile/UserProfile";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -35,10 +38,18 @@ function App() {
             <ServicesTabs />
             </ChakraProvider>
           </Route>
+          <Route path="/sitterProfile">
+            <ChakraProvider>
+            <SitterProfile />
+            </ChakraProvider>
+          </Route>
+          <Route path="/userProfile">
+            <ChakraProvider>
+            <UserProfile/>
+            </ChakraProvider>
+          </Route>
           <Route path="/registration">
-         
             <Registration/>
-           
             </Route>
 
         </Switch>
