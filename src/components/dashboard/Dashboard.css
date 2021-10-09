@@ -1,11 +1,4 @@
-/* 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
+ 
 .backimg{
     background-image: url('./images/dashboardbg.png');
     background-repeat: no-repeat;
@@ -13,4 +6,4 @@
     background-position:center;
     background-size: cover;
     opacity:0.75;
-} */
+} 

@@ -1,8 +1,8 @@
 import React from "react";
-import "./login.css"
+import "./signup.css"
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Signup() {
     return (
         <>
         <div className="main">
@@ -11,20 +11,18 @@ function Login() {
                 <p className="par">If You're a Pet Lover, You've Come to the Right Place <br />
                 Pup, Pup, Hooray! You Leave Em, We Love Em. <br />
                 Join our growing community and find one today.</p>
-                <Link to="/Signup"><button className="cn">Get Started</button></Link>
+                <Link to="/"><button className="cn">Get Started</button></Link>
             </div>
            
-           <form className="login_form">
+            <form className="signup_form">
             <div className="foram">
-                <h2>Login Here</h2>
-                <input type="email" name="email" placeholder="Enter your Email" required />
-                
-                <input type="Password" name="password" placeholder="Enter your Password" required />
-               
-                <button className="bhutton">Login</button>
-                <p className="lenk">Don't have an account? <br />
-                <Link to="/Signup">Sign-up</Link> here</p>
-                <p className="liw">Log in with</p>
+                <h2>Sign-up Here</h2>
+                <input type="email" name="email" placeholder="Enter your Email" required/>
+                <input type="Password" name="Password" placeholder="Enter your Password" required/>
+                <button className="bhutton">Sign-up</button>
+                <p className="lenk">Already have an account? <br />
+                <Link to="/">Sign-in</Link> here</p>
+                <p className="liw">Sign-up with</p>
 
                 <div className="icon">
                 <a href="#" class="fa fa-facebook"></a>
@@ -36,11 +34,12 @@ function Login() {
                 </div>
             </div>
             </form>
+
         </div>
-                
+        
         </>
 
     );
 }
 
-export default Login;
+export default Signup;

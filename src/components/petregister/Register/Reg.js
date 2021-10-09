@@ -188,26 +188,33 @@ function Reg() {
                 </div>
                 
             </section>
+
+            <form className="reg_form">
             <div className="reg">
                 <h2>Pet Sitter Application</h2>
                 <p>We’re looking forward to hearing your responses to our questions about pet care!</p>
             <div class="mb-3">
-                    <h6><label for="exampleFormControlInput1" class="form-label">Full name*</label></h6>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name" />
+                    <h6><label for="exampleFormControlInput1" class="form-label" >Full name (As per Aadhar card)*</label></h6>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name"/>
                 </div>
 
                 <div class="mb-3">
-                    <h6><label for="exampleFormControlInput1" class="form-label">Email*</label></h6>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Email" />
+                    <h6><label for="exampleFormControlInput1" class="form-label">Email (As per Aadhar card)*</label></h6>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Email"/>
                 </div>
 
                 <div class="mb-3">
-                    <h6><label for="exampleFormControlInput1" class="form-label">Mobile Number*</label></h6>
+                    <h6><label for="exampleFormControlInput1" class="form-label">Aadhar card Number*</label></h6>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your aadhar number" />
+                </div>
+
+                <div class="mb-3">
+                    <h6><label for="exampleFormControlInput1" class="form-label">Mobile Number (As per Aadhar card)*</label></h6>
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Mobile Number" />
                 </div>
 
                 <div class="mb-3">
-                    <h6><label for="exampleFormControlTextarea1" class="form-label">Address*</label></h6>
+                    <h6><label for="exampleFormControlTextarea1" class="form-label">Address (As per Aadhar card)*</label></h6>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
@@ -354,10 +361,11 @@ function Reg() {
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                 </div>
                 
-
-                    
-                    
+                
+                <button type="button" class="btn btn-success mb-3">Submit</button>
+       
              </div>
+             </form>
             
 
         </>

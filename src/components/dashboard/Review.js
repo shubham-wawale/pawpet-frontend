@@ -4,6 +4,8 @@ import web1 from "./images/image1.png"
 import web2 from "./images/image2.png"
 import web3 from "./images/image3.png"
 import web4 from "./images/reviews.png"
+import { Link } from 'react-router-dom';
+import web40 from "./images/rightarr.png"
 
 function Review() {
     return (
@@ -59,6 +61,11 @@ function Review() {
                 </div>
 
             </div>
+            <div className="directre">
+            <Link to="/PetsitterCards">Show All</Link> <img src={web40} alt="" height="12px" />
+            </div>
+
+            
 
         </>
     );

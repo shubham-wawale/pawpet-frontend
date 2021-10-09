@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './navbar.css'
 
 function Navbar() {
@@ -15,7 +15,7 @@ function Navbar() {
           <li><a href="#">ABOUT</a></li>
           <li><a href="#">SERVICE</a></li>
           <li><a href="#">CONTACT</a></li>
-          <button className="crtacc">Create Account</button>
+          <Link to="/Signup"> <button className="crtacc">Create Account</button></Link>
         </ul>
 
         

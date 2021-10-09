@@ -1,0 +1,117 @@
+.piro{
+    height: 120px;
+    width: 120px;
+    border-radius: 500px;
+}
+
+.boking{
+    margin-left: 350px;
+    margin-top: -180px;
+}
+
+.boking h6{
+    background-color:#4FD1c5;
+    height: 70px;
+    width: 500px;  
+    padding-top: 7px;
+}
+
+.boking p{
+    color: purple;
+}
+
+.fa-calendar{
+    margin-top: -25px;
+    font-size: 18px;
+}
+
+hr {
+    
+    border: 0;
+    display: block;
+    height: 1px;
+    line-height: 1.6;
+    margin: 2.2rem 0;
+    width: 50%;
+    margin-left: 70px;
+}
+
+.hinfo{
+    margin-top: -70px;
+}
+
+.fa-paw{
+    color: #F6AD55;
+    font-size: 19px;
+    margin-left: -18px;
+}
+
+.hexs{
+    margin-top: -52px;
+}
+
+.hexss{
+    margin-top: -29px;
+}
+
+.sitdog{
+    height: 18px;
+}
+
+.resv{
+    background-color: rgb(55, 211, 55);
+    height: 45px;
+    width: 220px;
+    border-radius: 7px;
+    margin-left: 95px;
+}
+
+.bor{
+    border-color: black;
+}
+
+.resv a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.chhard{
+    width: 28rem;
+    margin-left: 1100px;
+    margin-top: -800px;
+
+}
+
+.Talk{
+  font-size: 17px;  
+}
+
+.conthact{
+    width: 180px;
+    margin-left: 118px;
+    font-weight: bold;
+}
+
+.knoe{
+    margin-top: -10px;
+}
+
+.sitdoghas{
+    height: 23px;
+}
+
+.tralk{
+    font-size: 17px;
+    margin-top: 18px;
+}
+
+.chhard h5{
+    margin-left: 145px;
+    margin-top: 12px;
+    
+}
+
+.chhard h6{
+    margin-top: -8px;
+}

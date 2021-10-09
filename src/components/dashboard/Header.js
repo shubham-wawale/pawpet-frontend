@@ -10,12 +10,12 @@ function Header() {
     return (
         <>
         <div className="imhage">
-                <img src="" alt="" height="750px" width="1688px" />
+                <img src="" alt=""  />
             
             <div className="home-header">
-                <div className="container center">
+                <div className="container center ">
                     <div className="header-text hero-reversed">
-                        <h1> <strong> Get Pet Sitters for<br />Cat &amp; Dog Boarding in India</strong> </h1>
+                        <h1> <strong> Get Pet Sitters for your <br /> Pets in India</strong> </h1>
 
                         <div className="container search-section d-none d-md-block">
                             <div className="row py-3 mb-4 bg-div white">
