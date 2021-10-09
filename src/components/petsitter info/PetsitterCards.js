@@ -1,8 +1,16 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Card from "./Card"
 import Pdata from "./Petsitter"
 
 const PetsitterCards = () => {
+    const [petsitters, setPetsitters]=useState([])
+    useEffect(() => {
+
+            const data=JSON.parse(localStorage.getItem("foundPetSitters"))
+            setPetsitters(data)
+            console.log(JSON.parse(localStorage.getItem("foundPetSitters")))
+        
+    })
     return (
         <>
             <div className="my-5">
@@ -13,12 +21,12 @@ const PetsitterCards = () => {
                     <div className="col-10 mx-auto">
                         <div className="row gy-4">
                             {
-                                Pdata.map((val,ind) => {
+                                petsitters.map((val,ind) => {
                                     return <Card key={ind}
-                                        imgsrc={val.imgsrc}
-                                        title={val.title}
-                                        text={val.text}
-                                        rate={val.rate}
+                                        imgsrc={val.imageUrl}
+                                        title={val.name}
+                                        text={val.location}
+                                        rate={val.charge}
                                     />  
                             })
                         }

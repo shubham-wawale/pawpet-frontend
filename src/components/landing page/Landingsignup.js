@@ -4,12 +4,16 @@ import './landing.css';
 import Navbar from "./Navbar";
 import Signup from './Signup';
 
-function Landingsignup() {
+function Landingsignup(props) {
+  function addUser(data){
+    props.adduser(data)
+  }
+
   return (
     <div className="backhimg">
     <>
       <Navbar />
-      <Signup />
+      <Signup onadd={addUser} />
       
     </>
     </div>

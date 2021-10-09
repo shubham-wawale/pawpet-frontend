@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { ChakraProvider } from "@chakra-ui/react"
 import ServicesTabs from "./components/Services/Tabs";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -10,6 +10,7 @@ import UserProfile from "./components/profile/UserProfile";
 import Landingsignup from "./components/landing page/Landingsignup";
 import PetsitterCards from "./components/petsitter info/PetsitterCards";
 import Sitterinfo from "./components/petsitter info/Sitterinfo";
+import {petsitters} from "./data"
 
 import {
   BrowserRouter as Router,
@@ -18,18 +19,40 @@ import {
   Link
 } from "react-router-dom"
 
+
+
 function App() {
+  const[users, setUsers]= useState([
+    {
+      email:"console@gmail.com",
+      password:"console"
+    },
+    {
+      email:"chotu@gmail.com",
+      password:"chotu"
+    }
+  ])
+  function adduser(user) {
+    setUsers( prevValue => {
+      return [...prevValue, user];
+    })
+    console.log(users);
+    
+    // localStorage.setItem("normal_users",users)
+    
+  }
   return (
+    
     
     <div className="App">
       <Router>
       <Switch>
           <Route path="/dashboard">
-            <Dashboard />
+            <Dashboard petsitters={petsitters} />
           </Route>
           
           <Route exact path="/">
-            <Landing />
+            <Landing users={users}/>
           </Route>
 
           <Route path="/profile">
@@ -55,7 +78,7 @@ function App() {
           </Route>
 
           <Route path="/signup">
-            <Landingsignup/>
+            <Landingsignup adduser={adduser}/>
             </Route>
 
             <Route path="/petsitterCards">

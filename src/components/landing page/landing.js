@@ -4,12 +4,12 @@ import './landing.css';
 import Navbar from "./Navbar";
 import Login from "./login";
 
-function Landing() {
+function Landing(props) {
   return (
     <div className="backhimg">
     <>
       <Navbar />
-      <Login />
+      <Login users={props.users}/>
       
     </>
     </div>

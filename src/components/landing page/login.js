@@ -1,8 +1,41 @@
-import React from "react";
+import React, {useState} from "react";
 import "./login.css"
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router'
 
-function Login() {
+function Login(props) {
+    const [login, setLogin] = useState({
+        email: "",
+        password: ""
+    });
+
+    function handleChange(e) {
+        const {name, value} = e.target;
+        setLogin( prevValue => {
+            return {
+                ...prevValue,
+                [name]: value
+            }
+        } );
+        
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        let founduser=props.users.find(user =>user.email===login.email)
+        
+        if(founduser){
+            console.log(founduser)
+            alert("Successfully logged in")
+            props.history.push("/dashboard");
+        }
+        else{
+            console.log("usernotfound")
+        }
+        
+        // console.log(localStorage.getItem("normal_users"));    
+    }
+
     return (
         <>
         <div className="main">
@@ -17,11 +50,11 @@ function Login() {
            <form className="login_form">
             <div className="foram">
                 <h2>Login Here</h2>
-                <input type="email" name="email" placeholder="Enter your Email" required />
+                <input type="email" name="email" placeholder="Enter your Email" onChange={handleChange} required />
                 
-                <input type="Password" name="password" placeholder="Enter your Password" required />
+                <input type="Password" name="password" placeholder="Enter your Password" onChange={handleChange} required />
                
-                <button className="bhutton">Login</button>
+                <button className="bhutton" type="submit" onClick={handleSubmit}>Login</button>
                 <p className="lenk">Don't have an account? <br />
                 <Link to="/Signup">Sign-up</Link> here</p>
                 <p className="liw">Log in with</p>
@@ -43,4 +76,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default withRouter(Login);

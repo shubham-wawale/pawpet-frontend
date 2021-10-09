@@ -1,8 +1,31 @@
-import React from "react";
+import React,{useState} from "react";
 import "./signup.css"
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router'
 
-function Signup() {
+function Signup(props) {
+    const [signup, setSignup] = useState({
+        email: "",
+        password: "",
+    });
+
+    function handleChange(e) {
+        const {name, value} = e.target;
+        setSignup( prevValue => {
+            return {
+                ...prevValue,
+                [name]: value
+            }
+        } );
+        
+    }
+
+    function handleSubmit(e) {
+        // console.log(signup);
+        e.preventDefault();
+        props.onadd(signup)
+        props.history.push("/");
+    }
     return (
         <>
         <div className="main">
@@ -17,9 +40,9 @@ function Signup() {
             <form className="signup_form">
             <div className="foram">
                 <h2>Sign-up Here</h2>
-                <input type="email" name="email" placeholder="Enter your Email" required/>
-                <input type="Password" name="Password" placeholder="Enter your Password" required/>
-                <button className="bhutton">Sign-up</button>
+                <input type="email" name="email" placeholder="Enter your Email" onChange={handleChange} required/>
+                <input type="password" name="password" placeholder="Enter your Password " onChange={handleChange} required/>
+                <button className="bhutton" onClick={handleSubmit}>Sign-up</button>
                 <p className="lenk">Already have an account? <br />
                 <Link to="/">Sign-in</Link> here</p>
                 <p className="liw">Sign-up with</p>
@@ -42,4 +65,4 @@ function Signup() {
     );
 }
 
-export default Signup;
+export default withRouter(Signup);

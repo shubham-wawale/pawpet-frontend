@@ -5,14 +5,18 @@ import Review from "./Review";
 import Info from "./Info";
 import Remain from "./Remain";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 // import Head from "./Head"
 
 
-function Dashboard() {
+function Dashboard(props) {
+  console.log(props.petsitters);
   return (
+    
     <div className="backimg">
     <>
-      <Header />
+    <Navbar />
+      <Header petsitters={props.petsitters}/>
       <Review />
       <Info />
       <Remain/>

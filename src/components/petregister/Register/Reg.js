@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Reg.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from "react-bootstrap"
@@ -15,7 +15,15 @@ import web21 from "../Images/cute.png";
 import web22 from "../Images/catdog.png";
 
 
+
 function Reg() {
+    const[aadharnumber,setaadharnumber]=useState(
+        ""
+    )
+    const handleAadhar=(e)=>{
+    console.log(e.target.name)
+    console.log(e.target.value)
+    }
     return (
         <>
     
@@ -205,7 +213,7 @@ function Reg() {
 
                 <div class="mb-3">
                     <h6><label for="exampleFormControlInput1" class="form-label">Aadhar card Number*</label></h6>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your aadhar number" />
+                    <input type="" name="aadharno" onChange={handleAadhar} class="form-control" id="exampleFormControlInput1" placeholder="Enter your aadhar number" />
                 </div>
 
                 <div class="mb-3">
