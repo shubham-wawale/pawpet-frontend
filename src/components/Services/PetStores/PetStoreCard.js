@@ -72,13 +72,13 @@ const PetStoreCard = () => {
                             flex={1}
                             fontSize={'sm'}
                             rounded={'full'}
-                            bg={'teal.400'}
+                            bg={'orange.400'}
                             color={'white'}
                             boxShadow={
                                 '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
                             }
                             _hover={{
-                                bg: 'teal.500',
+                                bg: 'orange.500',
                             }}
                             _focus={{
                                 bg: 'blue.500',

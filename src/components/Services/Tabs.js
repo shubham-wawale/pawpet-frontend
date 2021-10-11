@@ -7,7 +7,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 const ServicesTabs = () => {
     return (
         <>
-            <Tabs defaultIndex={0} style={{margin: "1rem"}} variant="soft-rounded" colorScheme="green">
+            <Tabs defaultIndex={0} style={{margin: "1rem"}} variant="solid-rounded" colorScheme="orange">
               <TabList>
                 <Tab>ADOPTIONS</Tab>
                 <Tab>VETERINARY</Tab>
