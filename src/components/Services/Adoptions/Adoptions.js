@@ -1,106 +1,218 @@
-import { WrapItem,Wrap,Box, HStack } from "@chakra-ui/layout";
-import React, { useState } from "react";
+import { WrapItem, Wrap, Box, HStack, Center, Text } from "@chakra-ui/layout";
+import React, { useState, useEffect } from "react";
 import SearchBar from "../Search/SearchBar";
 import SearchResultCard from "../Search/SearchResultCard";
 import Filters from "../Search/Filters";
 import Results from "./Results";
+import axios from "axios"
 import "./Adoption.css";
-
+import { Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react"
 
 const Adoptions = () => {
-    
-    const [data,setData] = useState([
+
+  const [data, setData] = useState([
+    {
+      imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+      name: "Capella",
+      type: "Dog",
+      location: "mumbai",
+      category: "adult",
+      gender: "female",
+      photos: [
         {
-            imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-            name: "Capella",
-            type:"Dog",
-            location: "mumbai",
-            category: "adult",
-            gender: "female",
-          },
-          {
-            imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg?crop=0.672xw:1.00xh;0.166xw,0&resize=640:*",
-            name: "Capella",
-            type:"Dog",
-            location: "delhi",
-            category: "adult",
-            gender: "female",
-          },
-          {
-            imageUrl: "https://i.guim.co.uk/img/media/fe1e34da640c5c56ed16f76ce6f994fa9343d09d/0_174_3408_2046/master/3408.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0d3f33fb6aa6e0154b7713a00454c83d",
-            name: "Capella",
-            type:"Dog",
-            location: "delhi",
-            category: "adult",
-            gender: "female",
-          },
-          {
-            imageUrl: "https://images.unsplash.com/photo-1615789591457-74a63395c990?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9tZXN0aWMlMjBjYXR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-            name: "Capella",
-            type:"Cat",
-            location: "kolkata",
-            category: "adult",
-            gender: "female",
-          },
-          {
-            imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-cat-wearing-sunglasses-while-sitting-royalty-free-image-1571755145.jpg",
-            name: "Capella",
-            type:"Cat",
-            location: "mumbai",
-            category: "adult",
-            gender: "female",
-          },
-          {
-            imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg?crop=0.669xw:1.00xh;0.166xw,0&resize=640:*",
-            name: "Capella",
-            type:"Cat",
-            location: "kolkata",
-            category: "adult",
-            gender: "female",
-          },
-          {
-            imageUrl: "https://www.thesprucepets.com/thmb/aTYzWacWg5mTEDfF7gXIT2q2lgY=/3168x3168/smart/filters:no_upscale()/pet-parrot-on-human-hand-1022424278-5c3ded0ac9e77c00016e6e2b.jpg",
-            name: "Capella",
-            type:"Parrot",
-            location: "delhi",
-            category: "adult",
-            gender: "female",
-          },
-          {
-            imageUrl: "https://i.insider.com/5f6cbd43c4049200115cb68d?width=750&format=jpeg&auto=webp",
-            name: "Capella",
-            type:"Rabbit",
-            location: "mumbai",
-            category: "adult",
-            gender: "female",
-          }
-    ])
-    const filters = ["Type","Gender","Color","House trained"]
-    const [newData, setNewData] = useState([]);
+          full: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"
+        }
+      ]
+    },
+    {
+      imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+      name: "Capella",
+      type: "Dog",
+      location: "mumbai",
+      category: "adult",
+      gender: "female",
+      photos: [
+        {
+          full: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"
+        }
+      ]
+    },
+    {
+      imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+      name: "Capella",
+      type: "Dog",
+      location: "mumbai",
+      category: "adult",
+      gender: "female",
+      photos: [
+        {
+          full: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"
+        }
+      ]
+    },
+    {
+      imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+      name: "Capella",
+      type: "Dog",
+      location: "mumbai",
+      category: "adult",
+      gender: "female",
+      photos: [
+        {
+          full: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"
+        }
+      ]
+    },
+    {
+      imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+      name: "Capella",
+      type: "Dog",
+      location: "mumbai",
+      category: "adult",
+      gender: "female",
+      photos: [
+        {
+          full: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"
+        }
+      ]
+    },
 
-    const handleSearch = (location) => {
-        const updatedData = data.filter(property => property.location === location);
-        setNewData(updatedData);
+  ])
+  const [parameters, setParameters] = useState({})
+  const [isLoading, setLoading] = useState(true);
+  const [location,setLocation] = useState("")
+
+  const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJaeUJpYlFreEdSdGlmTG9zSDZlM3hOd2Q2aEZ5ZDN6RWRvVW1ZZXJxSGlzbkFvUHRCOCIsImp0aSI6ImRiOTI1NjRkNjYwNmQwOWJiNDg3MjExNzkxMGNjOTU5ZWZiYjg5ZjdhZWNjY2IxZjM3ZTU2MTY2MWQxNjEwNTY4YzUyOTVmZjgwZmQyYjdkIiwiaWF0IjoxNjMzOTQxNDAwLCJuYmYiOjE2MzM5NDE0MDAsImV4cCI6MTYzMzk0NTAwMCwic3ViIjoiIiwic2NvcGVzIjpbXX0.SzlBo1C2jaJArNtvZZXQ0gxgB-W7B1-eriwyBumLxteegC1LYChWXowfC7_DnYPQfaGnt_Ob1snZTfecks8JDcYCqD_QoPY0jZ4PBuNN0_COUQryx2-1iCZ_X0vbzzONyV4rNL93uyYs2r_V7oNwgCB6P_1WtFuTRc5Gp6M2KNVLwnkuCRKh1sLTLot6zaLJXgnR3qMjNgxx7_q_iyLp241VX7UiSvW-AQ7gyS9BF-EwQ0bANF-nygMHmLmojZJ9kN80lnvVwiv9kNqJZggPHWOYMg7jM2XqP4gnN_Kt8tAmclfQRLhowlZVfisq7gASM2f3yddP5isD27O5csyySg"
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+    params: {
+
     }
-    return (
-        <>
-            <SearchBar data={data} handleSearch={handleSearch} />
-            
-          
-          <Box display="flex" >
-            <Box boxShadow="lg" mt="60px" w="20.5%" h="578px" borderWidth="1px" borderRadius="lg" >
-                <Filters filters={filters} />
-            </Box>
-            <Box className="adoptionResultScroll" ml="30px" mt="20px" h="620px" w="79.5%" borderRadius="lg" overflowX="hidden" overflowY="scroll" >
-                <Results data={newData.length === 0 ? data : newData} />
-            </Box>
-            
-          </Box>
-            
+  };
 
-            
-        </>
+  useEffect(() => {
+    axios.get('https://api.petfinder.com/v2/types/dog',
+      config,
     )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+
+
+
+    axios.get('https://api.petfinder.com/v2/animals',
+      config,
+    )
+      .then(function (response) {
+        console.log(response.data.animals);
+        setData(response.data.animals);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {
+        setLoading(false)
+      })
+  }, []);
+
+  const [newData, setNewData] = useState([]);
+  const filters = ["Type"]
+
+  const handleSearch = (location) => {
+    const updatedData = data.filter(property => property.location === location);
+    setNewData(updatedData);
+  }
+
+  const handleParameters = async (data) => {
+    const {location} = data;
+    setLocation(location)
+    setLoading(true)
+    await setParameters(data);
+    axios.get('https://api.petfinder.com/v2/animals',
+      {
+        headers: { Authorization: `Bearer ${token}` },
+        params: data
+      })
+      .then(function (response) {
+        console.log(response.data.animals);
+        setData(response.data.animals);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {
+        setLoading(false)
+      })
+  }
+
+  const handleFilters = (data) => {
+    data["location"] = location
+    console.log(data)
+    setLoading(true)
+    axios.get('https://api.petfinder.com/v2/animals',
+      {
+        headers: { Authorization: `Bearer ${token}` },
+        params: data
+      })
+      .then(function (response) {
+        console.log(response.data.animals);
+        setData(response.data.animals);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {
+        setLoading(false)
+      })
+  }
+  return (
+    <>
+      <SearchBar sendSearchData={handleParameters} data={data} />
+
+
+      <Box display="flex" >
+        <Box boxShadow="lg" mt="60px" w="20.5%" h="578px" borderWidth="1px" borderRadius="lg" >
+          <Filters incomingFilters={handleFilters} filters={filters} />
+        </Box>
+        {isLoading ? (
+          <>
+          <Box className="adoptionResultScroll" ml="30px" mt="20px" h="620px" w="79.5%" borderRadius="lg" overflowX="hidden" overflowY="scroll" >
+            <Box ml="10px">
+              <Text fontSize="2xl" color="gray.400" fontWeight="semibold">------Loading results-----------------</Text>
+            </Box>
+            <Box m="10px" mt="10px">
+            <Wrap justify="left" spacing="15px">
+            {Array(10)
+              .fill("")
+              .map((_, i) => (
+                
+                  <Box boxShadow="lg" borderWidth="1px" borderRadius="lg" overflow="hidden"
+                    padding="6" w={"200px"} bg="white">
+                    <Center><SkeletonCircle size="20" /></Center>
+                    <SkeletonText w={115} mt="4" noOfLines={6} spacing="4" />
+                  </Box>
+              ))}
+              </Wrap>
+              </Box>
+            </Box>
+          </>
+        ) : (
+          <Box className="adoptionResultScroll" ml="30px" mt="20px" h="620px" w="79.5%" borderRadius="lg" overflowX="hidden" overflowY="scroll" >
+            <Results data={data} />
+          </Box>
+        )
+        }
+
+
+      </Box>
+
+
+
+    </>
+  )
 }
 
 export default Adoptions;

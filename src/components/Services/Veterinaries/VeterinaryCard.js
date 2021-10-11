@@ -56,7 +56,7 @@ const VeterinaryCard = () => {
                             rightIcon={<ViewIcon />}    
                             size="sm"
                             mt={4}
-                            bg="teal.400"
+                            bg="orange.400"
                             color={'white'}
                             rounded={'md'}
                             _hover={{

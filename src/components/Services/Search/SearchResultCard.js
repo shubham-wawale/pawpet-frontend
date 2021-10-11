@@ -1,5 +1,5 @@
 import React from "react";
-import { Box,Badge, Center } from "@chakra-ui/layout"
+import { Box,Badge, Center, Text } from "@chakra-ui/layout"
 import { Image } from "@chakra-ui/image"
 import { transform } from "@chakra-ui/styled-system";
 import { scaleFadeConfig } from "@chakra-ui/transition";
@@ -12,11 +12,11 @@ const SearchResultCard = (props) => {
       <Image 
        boxSize="200px"
        objectFit="cover"
-       src={props.data.imageUrl} />
+       src={props.data.photos.length !== 0 ? props.data.photos[0].full : "https://static.wikia.nocookie.net/nopixel/images/b/b4/Not-found-image-15383864787lu.jpg/revision/latest?cb=20200910062142" } />
       
       <Box p="4" pb="2">
         <Box ml="3" d="flex" alignItems="baseline">
-          <Badge borderRadius="full" px="2" colorScheme="green">
+          <Badge borderRadius="full" px="2" colorScheme="orange">
             {props.data.type}
           </Badge>
           <Box
@@ -28,7 +28,7 @@ const SearchResultCard = (props) => {
             ml="2"
           >
            <Center>
-            {props.data.category} &bull; {props.data.gender}
+            {props.data.age} &bull; {props.data.gender}
             </Center>
           </Box>
         </Box>
@@ -42,19 +42,15 @@ const SearchResultCard = (props) => {
           Name: {props.data.name}
         </Box> */}
         <Box
-          mt="3"
+          mt="1"
           fontWeight="semibold"
-          as="h6"
+          as="h4"
           lineHeight="tight"
           isTruncated
-          color="blackAlpha.700"
-          fontFamily="sans-serif"
-          letterSpacing="wide"
 
         >
-        <Center>
-          {props.data.name},{props.data.location}
-          </Center>
+          <Center>{props.data.name.length > "10" ? (props.data.name.substring(0,10) + "..") : props.data.name },{props.data.contact.address.state} </Center>  
+         
         </Box>
         
         </Box>

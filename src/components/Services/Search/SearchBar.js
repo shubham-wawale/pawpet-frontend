@@ -8,28 +8,37 @@ import { SearchIcon } from "@chakra-ui/icons"
 
 const SearchBar = (props) => {
   const [location, setLocation] = useState("");
-  const handleSearch = (e) => {
+  const [searchData, setSearchData] = useState({
+    location: ""
+  });
 
+  const handleSearch = (e) => {
     setLocation(e.target.value)
+    const {name, value} = e.target;
+    setSearchData( prevValue => {
+        return {
+            ...prevValue,
+            [name]: value
+        }
+    } ); 
   }
 
   const handleClick = () => {
-    localStorage.setItem("searchLocation", location);
-    console.log(localStorage.getItem("searchLocation"))
-    props.handleSearch(location)
+    console.log(searchData)
+    props.sendSearchData(searchData)
   }
   return (
     <>
       <Wrap mt="15px" justify="right" spacing="30px">
 
         <WrapItem>
-          <Input boxShadow="md" name="searchLocation" onChange={handleSearch} style={{ width: "300px" }} variant="filled" placeholder="State" />
+          <Input boxShadow="md" name="state" style={{ width: "300px" }} variant="filled" placeholder="State" />
         </WrapItem>
         <WrapItem>
-          <Input boxShadow="md" name="searchLocation" onChange={handleSearch} style={{ width: "300px" }} variant="filled" placeholder="City" />
+          <Input boxShadow="md" name="searchLocation"  style={{ width: "300px" }} variant="filled" placeholder="City" />
         </WrapItem>
         <WrapItem>
-          <Input boxShadow="md" name="searchLocation" onChange={handleSearch} style={{ width: "300px" }} variant="filled" placeholder="Pincode" />
+          <Input boxShadow="md" name="location" onChange={handleSearch} style={{ width: "300px" }} variant="filled" placeholder="Pincode" />
         </WrapItem>
         <WrapItem>
           <Select boxShadow="md" variant="filled" style={{ width: "300px" }} placeholder="Select Country">
@@ -39,7 +48,7 @@ const SearchBar = (props) => {
           </Select>
         </WrapItem>
         <WrapItem>
-          <Button boxShadow="lg" w="150px" onClick={handleClick} leftIcon={<SearchIcon />} colorScheme="teal" variant="solid">
+          <Button boxShadow="lg" w="150px" onClick={handleClick} leftIcon={<SearchIcon />} colorScheme="orange" variant="solid">
             Search
           </Button>
         </WrapItem>
