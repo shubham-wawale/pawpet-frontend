@@ -3,9 +3,10 @@ import './Register/Reg.css'
 import Reg from './Register/Reg'
 import Footer from './Register/Footer'
 import './Register/Registration.css'
+import Navbar from './Register/Navbar'
 function Registration() {
   return (
-    <>
+    <><Navbar />
       <div className="background">
 
 
@@ -20,7 +21,7 @@ function Registration() {
         </div>
 
       </div>
-
+      
       <Reg />
       <Footer />
 

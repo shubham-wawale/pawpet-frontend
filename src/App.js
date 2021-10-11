@@ -10,7 +10,7 @@ import UserProfile from "./components/profile/UserProfile";
 import Landingsignup from "./components/landing page/Landingsignup";
 import PetsitterCards from "./components/petsitter info/PetsitterCards";
 import Sitterinfo from "./components/petsitter info/Sitterinfo";
-import {petsitters} from "./data"
+import {petsitters,transactions,booking} from "./data"
 
 import {
   BrowserRouter as Router,
@@ -90,10 +90,9 @@ function App() {
           <Route path="/sitterinfo">
             <Sitterinfo/>
             </Route>
-
-
+          
           <Route path="/registration">
-            <Registration/>
+            <Registration petsitters={petsitters} transactions={transactions} booking={booking}/>
             </Route>
 
         </Switch>

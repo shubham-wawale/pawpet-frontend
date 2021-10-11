@@ -5,7 +5,7 @@ import './navbar.css'
 function Navbar() {
   return (
     <>
-    <div className="navbar">
+    <div className="navbar regnav">
       <div className="ichon">
         <h2 className="loho">PawPet</h2>
       </div>

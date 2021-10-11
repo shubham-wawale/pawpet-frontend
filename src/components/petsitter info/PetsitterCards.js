@@ -11,10 +11,11 @@ const PetsitterCards = () => {
             console.log(JSON.parse(localStorage.getItem("foundPetSitters")))
         
     })
+
     return (
         <>
             <div className="my-5">
-                <h1 className="text-center">Pet Sitter Reviews</h1>
+                <h1 className="text-center">Pet Sitter Results</h1>
             </div>
             <div className="container-fluid mb-5">
                 <div className="row">
@@ -22,7 +23,9 @@ const PetsitterCards = () => {
                         <div className="row gy-4">
                             {
                                 petsitters.map((val,ind) => {
-                                    return <Card key={ind}
+                                    return <Card 
+                                    data={val}
+                                    key={ind}
                                         imgsrc={val.imageUrl}
                                         title={val.name}
                                         text={val.location}

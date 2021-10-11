@@ -1,6 +1,6 @@
 .navbar{
     width: 1300px;
-    height: 75px;
+    height: 70px;
     margin: auto;
 }
 
@@ -49,6 +49,8 @@
     transition: 0.4s ease-in-out;
     font-size: 20px;
 } 
+
+
 
 .crtacc{
     width: 160px;

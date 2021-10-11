@@ -1,11 +1,19 @@
 import React from "react";
 import web4 from "./reviews.png"
 import "./Card.css"
+import { withRouter } from "react-router";
 
 const Card = (props) => {
+    const handleClick=()=>{
+        localStorage.setItem("selectedPetSitter",JSON.stringify(props.data))
+        props.history.push({ 
+            pathname: '/sitterinfo',
+            state: props.data
+           });
+    }
     return (
         <>
-                            <div className="col-md-4 col-10 mx-auto">
+                            <div className="col-md-4 col-10 mx-auto" onClick={handleClick}>
                                 <div className="card haait">
                                     <img src={props.imgsrc} className="card-img-top rev" alt={props.imgsrc} height="250px" />
                                     <div className="card-body">
@@ -21,4 +29,4 @@ const Card = (props) => {
     );
 };
 
-export default Card
+export default withRouter(Card)

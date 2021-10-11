@@ -3,6 +3,7 @@ import {Table,Thead,Tbody,Tr,Th,Td,TableCaption,} from "@chakra-ui/react";
 import { Checkbox } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
 import { Wrap, WrapItem,Tab,Tabs,TabList,TabPanel,TabPanels} from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import {
   Avatar, useToast ,statuses,Button,toast,
   Heading,
@@ -44,8 +45,8 @@ function UserProfile() {
   <Button leftIcon={<DeleteIcon/>} ml="270px" colorScheme="orange" variant="solid">
     Delete Account
   </Button>
-  <Button leftIcon={<ArrowBackIcon/>} ml="470px" colorScheme="orange" variant="solid">
-    Logout
+   <Button leftIcon={<ArrowBackIcon/>} ml="470px" colorScheme="orange" variant="solid">
+   <Link to="/">  Logout</Link>
   </Button>
 </Stack>
   </TabList>

@@ -131,10 +131,10 @@ function SitterProfile() {
         <Thead>
           <Tr>
             <Th>Serial Number</Th>
-            <Th>Name of the User</Th>
+            <Th>Transaction ID</Th>
             <Th>Amount</Th>
             <Th>Date</Th>
-            <Th>Number of pets</Th>
+           
           </Tr>
         </Thead>
         <Tbody>
@@ -143,28 +143,28 @@ function SitterProfile() {
             <Td>Shubham</Td>
             <Td>2500</Td>
             <Td>15/03/2021</Td>
-            <Td>1</Td>
+            
           </Tr>
           <Tr>
             <Td>2</Td>
             <Td>Amit</Td>
             <Td>3800</Td>
             <Td>27/08/2021</Td>
-            <Td>2</Td>
+            
           </Tr>
           <Tr>
             <Td>3</Td>
             <Td>Raj</Td>
             <Td>1000</Td>
             <Td>12/12/2020</Td>
-            <Td>1</Td>
+           
           </Tr>
           <Tr>
             <Td>4</Td>
             <Td>Neha</Td>
             <Td>6500</Td>
             <Td>02/05/2021</Td>
-            <Td>3</Td>
+            
           </Tr>
         </Tbody>
       </Table>

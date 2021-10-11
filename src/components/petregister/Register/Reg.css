@@ -136,6 +136,27 @@ color: brown;
 
 }
 
+#starttime{
+    width: 200px;
+}
+
+.from{
+    margin-left: -69px;
+}
+
+.uss{
+    margin-left: -76px;
+}
+
+.to{
+    margin-left: -159px;
+}
+
+.phop{
+    margin-left: 185px;
+    margin-top: 20px;
+}
+
 @media screen and (max-width: 768px) {
     figcaption{
         position: inherit;
