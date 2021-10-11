@@ -25,9 +25,9 @@ function UserProfile() {
       <Box width="290px" height="320px" borderWidth="10px" borderRadius="lg"p="50px">
 
         <Stack direction="column">
-          <Avatar size="2xl" name="Segun Adebayo"
-            src="https://bit.ly/sage-adebayo" ml="20px"/>
-          <Heading textAlign="center" color="gray">Akansha</Heading>
+          <Avatar size="2xl" name="User"
+            src="" ml="20px"/>
+          <Heading textAlign="center" color="gray">User</Heading>
           <Text fontWeight="bold" textAlign="center" color="gray">Nerul,Navi Mumbai</Text>
         </Stack>
         </Box>
@@ -70,7 +70,7 @@ function UserProfile() {
                   borderWidth="3px"
                   borderRadius="md"
                 >
-                  <Text textAlign="center" fontSize="xl" color="gray">Akansha</Text>
+                  <Text textAlign="center" fontSize="xl" color="gray">User</Text>
                 </Box>
               </Box>
 
@@ -104,7 +104,7 @@ function UserProfile() {
                   width="700px"
                   borderWidth="3px"
                   borderRadius="md">
-                  <Text textAlign="center" fontSize="xl" color="gray">akansha101@gmail.com</Text>
+                  <Text textAlign="center" fontSize="xl" color="gray">User101@gmail.com</Text>
                 </Box>
               </Box>
 
@@ -158,10 +158,10 @@ function UserProfile() {
             <Th>Number of pets</Th>
           </Tr>
         </Thead>
-        <Tbody>
+        {/* <Tbody>
           <Tr>
             <Td>1</Td>
-            <Td>Akansha</Td>
+            <Td>User</Td>
             <Td>2500</Td>
             <Td>25/12/2021</Td>
             <Td>1</Td>
@@ -187,7 +187,7 @@ function UserProfile() {
             <Td>21/10/2021</Td>
             <Td>3</Td>
           </Tr>
-        </Tbody>
+        </Tbody> */}
       </Table> 
     </TabPanel>
 

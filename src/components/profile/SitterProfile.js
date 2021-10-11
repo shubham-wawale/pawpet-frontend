@@ -3,6 +3,7 @@ import {Table,Thead,Tbody,Tr,Th,Td,TableCaption,} from "@chakra-ui/react";
 import { Checkbox } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
 import { Wrap, WrapItem,Tab,Tabs,TabList,TabPanel,TabPanels} from "@chakra-ui/react";
+import { Link } from "react-router-dom"; 
 import {
   Avatar, useToast ,statuses,Button,toast,
   Heading,
@@ -24,9 +25,9 @@ function SitterProfile() {
       <Box width="285px" height="650px" borderWidth="10px" borderRadius="lg" p="20px">
 
         <Stack direction="column">
-          <Avatar size="2xl" name="Segun Adebayo"
-            src="https://bit.ly/sage-adebayo" ml="34px"/>
-          <Heading textAlign="center" color="gray">Akansha</Heading>
+          <Avatar size="2xl" name="John"
+            src="" ml="46px"/>
+          <Heading textAlign="center" color="gray">John </Heading>
           <Text textAlign="center" color="gray">Nerul,Navi Mumbai</Text>
         </Stack>
         
@@ -58,7 +59,7 @@ function SitterProfile() {
                   letterSpacing="wide"
                   fontSize="sm"
                   ml="2">
-                  2000 per pet
+                  250 per pet
                 </Box>
               </Box>
             </Stack>
@@ -97,7 +98,7 @@ function SitterProfile() {
             <Stack>
             <Stat>
   <StatLabel>Total Earnings</StatLabel>
-  <StatNumber>Rs 500.00</StatNumber>
+  <StatNumber>Rs 000.00</StatNumber>
   <StatHelpText>Sep 12 - Sep 27</StatHelpText>
     </Stat>
     </Stack>
@@ -119,7 +120,7 @@ function SitterProfile() {
     Delete Account
   </Button>
   <Button leftIcon={<ArrowBackIcon/>} ml="470px" colorScheme="orange" variant="solid">
-    Logout
+  <Link to="/">  Logout</Link>
   </Button>
 </Stack>
   </TabList>
@@ -138,7 +139,9 @@ function SitterProfile() {
           </Tr>
         </Thead>
         <Tbody>
-          <Tr>
+
+
+          {/* <Tr>
             <Td>1</Td>
             <Td>Shubham</Td>
             <Td>2500</Td>
@@ -165,7 +168,7 @@ function SitterProfile() {
             <Td>6500</Td>
             <Td>02/05/2021</Td>
             
-          </Tr>
+          </Tr> */}
         </Tbody>
       </Table>
     </TabPanel>
@@ -183,7 +186,7 @@ function SitterProfile() {
             <Th>Number of pets</Th>
           </Tr>
         </Thead>
-        <Tbody>
+        {/* <Tbody>
           <Tr>
             <Td>1</Td>
             <Td>Akansha</Td>
@@ -212,7 +215,7 @@ function SitterProfile() {
             <Td>21/10/2021</Td>
             <Td>3</Td>
           </Tr>
-        </Tbody>
+        </Tbody> */}
       </Table> 
     </TabPanel>
 

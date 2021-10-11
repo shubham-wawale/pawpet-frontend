@@ -61,9 +61,9 @@ function Review() {
                 </div>
 
             </div>
-            <div className="directre">
+            {/* <div className="directre">
             <Link to="/PetsitterCards">Show All</Link> <img src={web40} alt="" height="12px" />
-            </div>
+            </div> */}
 
             
 

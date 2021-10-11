@@ -15,10 +15,11 @@ import web19 from "../Images/cat1.png";
 import web20 from "../Images/dog1.png";
 import web21 from "../Images/cute.png";
 import web22 from "../Images/catdog.png";
+import { withRouter } from 'react-router';
 
 
 
-function Reg() {
+function Reg(props) {
     const [aadharnumber, setaadharnumber] = useState(
         ""
     )
@@ -26,6 +27,12 @@ function Reg() {
         console.log(e.target.name)
         console.log(e.target.value)
     }
+
+    const handleSubmit=(e)=>{
+        alert("Successfully Submitted")
+        props.history.push("/sitterprofile");
+    }
+
     return (
         <>
 
@@ -388,22 +395,11 @@ function Reg() {
                     </div>
 
 
-                    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary mb-3" onClick={handleSubmit}>
                         Submit
                     </button>
 
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">SUCCESS!!!</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <Link to="/sitterProfile"><button type="button" class="btn btn-success phop mb-3">Launch Profile</button></Link>
-
-                                </div>
-                            </div>
-                        </div>
+                    
                 </div>
             </form>
 
@@ -413,4 +409,4 @@ function Reg() {
     );
 };
 
-export default Reg;
+export default withRouter(Reg) ;
