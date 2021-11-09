@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Table,Thead,Tbody,Tr,Th,Td,TableCaption,} from "@chakra-ui/react";
 import { Checkbox } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
@@ -19,21 +19,53 @@ import {DeleteIcon,ArrowBackIcon} from "@chakra-ui/icons";
 
 function UserProfile() {
   const toast = useToast()
+  const [user, setUser] = useState({
+    name:"User",
+    email:"user@gmail.com",
+    password:"karwa",
+  })
+
+  const bookings = [{
+    name_of_sitter:"Ramesh",
+    amount:"250",
+    date: new Date(),
+    number_of_pets: "1"
+  },{
+    name_of_sitter:"Anjali",
+    amount:"750",
+    date: new Date(),
+    number_of_pets: "3"
+  },{
+    name_of_sitter:"Neha",
+    amount:"500",
+    date: new Date(),
+    number_of_pets: "2"
+  }]
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setUser(prevValue => {
+        return {
+            ...prevValue,
+            [name]: value
+        }
+    });
+
+}
+
+
   return (
     <>
     <Wrap spacing="100px" m="60px" > 
-      <Box width="290px" height="320px" borderWidth="10px" borderRadius="lg"p="50px">
+      <Box width="290px" height="430px" borderWidth="10px" borderRadius="lg"p="50px">
 
         <Stack direction="column">
           <Avatar size="2xl" name="User"
             src="" ml="20px"/>
-          <Heading textAlign="center" color="gray">User</Heading>
-          <Text fontWeight="bold" textAlign="center" color="gray">Nerul,Navi Mumbai</Text>
+          <Heading textAlign="center" color="gray">{user.name}</Heading>
+          <Text fontWeight="bold" textAlign="center" color="gray">{user.email}</Text>
         </Stack>
         </Box>
-
-        
-        
           <WrapItem>
         <Box>
         <Tabs variant="solid-rounded" colorScheme="orange">
@@ -54,7 +86,7 @@ function UserProfile() {
   <TabPanels>
     <TabPanel>
   <Stack>
-        <Wrap spacing="100px" mt="45px" height="450px" width="700px" borderRadius="lg" borderWidth="10px" >
+        <Wrap spacing="100px" mt="45px" height="300px" width="700px" borderRadius="lg" borderWidth="10px" >
           <Stack direction="column" p="35px">
         <Box display="flex" alignItems="baseline" width="400px" >
                 <Badge fontSize="xl" borderRadius="full" px="2" colorScheme="orange">
@@ -70,13 +102,13 @@ function UserProfile() {
                   borderWidth="3px"
                   borderRadius="md"
                 >
-                  <Text textAlign="center" fontSize="xl" color="gray">User</Text>
+                  <Text textAlign="center" fontSize="xl" color="gray">{user.name}</Text>
                 </Box>
               </Box>
 
               <Box display="flex" alignItems="baseline" width="400px">
                 <Badge fontSize="xl" borderRadius="full" px="2" colorScheme="orange" mt="2rem">
-                  Location:
+                  Password:
                 </Badge>
                 <Box
                   color="gray.500"
@@ -87,7 +119,7 @@ function UserProfile() {
                   width="100%"
                   borderWidth="3px"
                   borderRadius="md">
-                  <Text textAlign="center" fontSize="xl" color="gray">Nerul,Navi Mumbai</Text>
+                  <Text textAlign="center" fontSize="xl" color="gray">{user.password}</Text>
                 </Box>
               </Box>
 
@@ -104,11 +136,11 @@ function UserProfile() {
                   width="700px"
                   borderWidth="3px"
                   borderRadius="md">
-                  <Text textAlign="center" fontSize="xl" color="gray">User101@gmail.com</Text>
+                  <Text textAlign="center" fontSize="xl" color="gray">{user.email}</Text>
                 </Box>
               </Box>
 
-              <Box display="flex" alignItems="baseline" width="400px">
+              {/* <Box display="flex" alignItems="baseline" width="400px">
                 <Badge fontSize="xl" borderRadius="full" px="2" colorScheme="orange" mt="2rem">
                   Phone Number:
                 </Badge>
@@ -141,7 +173,7 @@ function UserProfile() {
                   <Text textAlign="center" fontSize="xl" color="gray">1</Text>
                 </Box>
               
-              </Box>
+              </Box> */}
               </Stack>
               </Wrap>
         </Stack>
@@ -158,36 +190,23 @@ function UserProfile() {
             <Th>Number of pets</Th>
           </Tr>
         </Thead>
-        {/* <Tbody>
-          <Tr>
-            <Td>1</Td>
-            <Td>User</Td>
-            <Td>2500</Td>
-            <Td>25/12/2021</Td>
-            <Td>1</Td>
-          </Tr>
-          <Tr>
-            <Td>2</Td>
-            <Td>Rohan</Td>
-            <Td>3500</Td>
-            <Td>19/11/2021</Td>
-            <Td>2</Td>
-          </Tr>
-          <Tr>
-            <Td>3</Td>
-            <Td>Eshaan</Td>
-            <Td>8700</Td>
-            <Td>18/10/2020</Td>
-            <Td>4</Td>
-          </Tr>
-          <Tr>
-            <Td>4</Td>
-            <Td>Shania</Td>
-            <Td>5000</Td>
-            <Td>21/10/2021</Td>
-            <Td>3</Td>
-          </Tr>
-        </Tbody> */}
+         <Tbody>
+         {bookings.map((booking,index) => {
+           return (
+            <Tr>
+            <Td>{index+1}</Td>
+            <Td>{booking.name_of_sitter}</Td>
+            <Td>{booking.amount}</Td>
+            <Td>{booking.date.toLocaleDateString("en-US",{
+                weekday: "long",
+                day: "numeric",
+                month: "long"
+            })}</Td>
+            <Td>{booking.number_of_pets}</Td>
+            </Tr> 
+           )   
+          })}
+        </Tbody> 
       </Table> 
     </TabPanel>
 
@@ -208,14 +227,14 @@ function UserProfile() {
                   letterSpacing="wide"
                   fontSize="xs"
                   ml="2">
-                  <Input variant="filled" size="md" placeholder="Enter new name" width="680px" />
+                  <Input name="name" onChange={handleChange} variant="filled" size="md" placeholder="Enter new name" width="680px" />
                 </Box>
                 </Box>
             </Stack>
             <Stack direction="row">
               <Box display="flex" alignItems="baseline" mt="20px">
                 <Badge fontSize="md" borderRadius="full" px="2" colorScheme="orange">
-                  Change your location:
+                  Change your Password:
                 </Badge>
                 <Box
                   color="gray.500"
@@ -223,7 +242,7 @@ function UserProfile() {
                   letterSpacing="wide"
                   fontSize="xs"
                   ml="2">
-                  <Input variant="filled" size="md" placeholder="Enter new location" width="650px" />
+                  <Input name="password" onChange={handleChange} variant="filled" size="md" placeholder="Enter new location" width="650px" />
                 </Box>
                 </Box>
             </Stack>
@@ -240,12 +259,12 @@ function UserProfile() {
                   letterSpacing="wide"
                   fontSize="xs"
                   ml="2">
-                  <Input variant="filled" size="md" placeholder="Enter new charges" width="685px" />
+                  <Input name="email" onChange={handleChange} variant="filled" size="md" placeholder="Enter new charges" width="685px" />
                 </Box>
               </Box>
             </Stack>
 
-            <Stack>
+            {/* <Stack>
               <Box display="flex" alignItems="baseline" mt="30px">
                 <Badge fontSize="md" borderRadius="full" px="2" colorScheme="orange">
                   Change your phone number:
@@ -259,9 +278,9 @@ function UserProfile() {
                   <Input variant="filled" size="md" placeholder="Enter new charges" width="607px" />
                 </Box>
               </Box>
-            </Stack>
+            </Stack> */}
             
-            <Stack>
+            {/* <Stack>
               <Box display="flex" alignItems="baseline" mt="35px">
                 <Badge fontSize="md" borderRadius="full" px="2" colorScheme="orange">
                   Number of Pets:
@@ -280,24 +299,24 @@ function UserProfile() {
                   <option value="option3">3</option>
                   <option value="option3">4</option>
                   </Select>
-                  </Stack>
-    <Button mt="25px" ml="680px" status="success" colorScheme= "green" onClick={() =>
-        toast({
-          title: "Changes saved",
-          description: "Your profile has been edited",
-          status: "success",
-          duration: 9000,
-          isClosable: true,
-        })
-      }
+                  </Stack> */}
+    <Button mt="25px" ml="680px" status="success" colorScheme= "green" onClick={()=> {
+      toast({
+        title: "Changes saved",
+        description: "Your profile has been edited",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      })
+    }}
     >
       SAVE
     </Button>
 
 
-                </Box>
+                {/* </Box>
               </Box>
-            </Stack>
+            </Stack> */}
       </Box>
       </Wrap>    
     </TabPanel>
