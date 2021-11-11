@@ -3,6 +3,7 @@ import "./login.css"
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router'
 import { Toast } from "bootstrap";
+import axios from "axios";
 
 function Login(props) {
     const [login, setLogin] = useState({
@@ -24,6 +25,14 @@ function Login(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
+        axios.post("/login", {
+            email: login.email,
+            password: login.password
+        }).then((res)=> {
+            console.log(res)
+        }).catch(err=> {
+            console.log(err)
+        })
         let founduser = props.users.find(user => user.email === login.email)
 
         if (founduser) {
@@ -41,7 +50,7 @@ function Login(props) {
             
         }
 
-        // console.log(localStorage.getItem("normal_users"));    
+        console.log(localStorage.getItem("normal_users"));    
     }
 
     return (
@@ -62,9 +71,9 @@ function Login(props) {
                 <form className="login_form">
                     <div className="foram">
                         <h2>Login Here</h2>
-                        <input type="email" name="email" placeholder="Enter your Email" onChange={handleChange} required />
+                        <input type="email" name="email" placeholder="Enter your Email" required onChange={handleChange} />
 
-                        <input type="Password" name="password" placeholder="Enter your Password" onChange={handleChange} required />
+                        <input type="Password" name="password" placeholder="Enter your Password" required onChange={handleChange}  />
 
                         <button className="bhutton" type="submit" onClick={handleSubmit}>Login</button>
                         <p className="lenk">Don't have an account? <br />

@@ -21,7 +21,7 @@ function Signup(props) {
     }
 
     function handleSubmit(e) {
-        // console.log(signup);
+        // console.log(signup)
         e.preventDefault();
         props.onadd(signup)
         alert("User added successfully")
@@ -41,8 +41,8 @@ function Signup(props) {
             <form className="signup_form">
             <div className="foram">
                 <h2>Sign-up Here</h2>
-                <input type="email" name="email" placeholder="Enter your Email" onChange={handleChange} required/>
-                <input type="password" name="password" placeholder="Enter your Password " onChange={handleChange} required/>
+                <input type="email" name="email" required="required" placeholder="Enter your Email" onChange={handleChange} />
+                <input type="password" name="password" required="required" placeholder="Enter your Password " onChange={handleChange} />
                 <button className="bhutton" onClick={handleSubmit}>Sign-up</button>
                 <p className="lenk">Already have an account? <br />
                 <Link to="/">Sign-in</Link> here</p>
