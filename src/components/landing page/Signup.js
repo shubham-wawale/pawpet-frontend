@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import "./signup.css"
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router'
+import axios from "axios"
 
 function Signup(props) {
     const [signup, setSignup] = useState({
         email: "",
         password: "",
     });
+    const[isRegistered,setIsRegistered]=useState(false)
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -20,12 +22,27 @@ function Signup(props) {
 
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
+        let register = false;
         // console.log(signup)
         e.preventDefault();
-        props.onadd(signup)
-        alert("User added successfully")
-        props.history.push("/");
+        axios.post("/register", {
+            email: signup.email,
+            password: signup.password
+        }).then((res)=> {
+            setIsRegistered(res.data.isRegistered)
+            console.log(res)
+        }).catch(err=> {
+            console.log(err)
+        })
+        
+        if(isRegistered) {
+            alert("User added successfully")
+            props.history.push("/");
+        } else {
+            alert("Unsuccessful registration")
+            props.history.push("/Signup");
+        }
     }
     return (
         <>

@@ -22,7 +22,7 @@ function UserProfile() {
   const [user, setUser] = useState({
     name:"User",
     email:"user@gmail.com",
-    password:"karwa",
+    password:"user",
   })
 
   const bookings = [{
@@ -242,7 +242,7 @@ function UserProfile() {
                   letterSpacing="wide"
                   fontSize="xs"
                   ml="2">
-                  <Input name="password" onChange={handleChange} variant="filled" size="md" placeholder="Enter new location" width="650px" />
+                  <Input name="password" onChange={handleChange} variant="filled" size="md" placeholder="Enter new passsword" width="650px" />
                 </Box>
                 </Box>
             </Stack>
@@ -259,7 +259,7 @@ function UserProfile() {
                   letterSpacing="wide"
                   fontSize="xs"
                   ml="2">
-                  <Input name="email" onChange={handleChange} variant="filled" size="md" placeholder="Enter new charges" width="685px" />
+                  <Input name="email" onChange={handleChange} variant="filled" size="md" placeholder="Enter new email" width="685px" />
                 </Box>
               </Box>
             </Stack>

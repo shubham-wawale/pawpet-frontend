@@ -3,6 +3,7 @@ import { Form, Row, Col } from 'react-bootstrap'
 import './Reg.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 // import coff from "../Images/twocat.jpg";
@@ -20,17 +21,84 @@ import { withRouter } from 'react-router';
 
 
 function Reg(props) {
-    const [aadharnumber, setaadharnumber] = useState(
-        ""
-    )
-    const handleAadhar = (e) => {
-        console.log(e.target.name)
-        console.log(e.target.value)
+    const[data,setData]=useState({
+        name:"",
+        aadhar_number:"",
+        email:"",
+        ph_no:"",
+        address:"",
+        no_of_pets: 0,
+        description: ""
+    })
+
+    const [time, setTime]=useState({
+        timing_from:"",
+        timing_to:""
+    })
+
+    const[isRegistered,setIsRegistered]=useState(false)
+
+    var days_available = [];
+
+    const handleChange = (e) => {
+
+        console.log(e.target);
+
+        const{name,value}=e.target
+        console.log(name, value)
+        setData(prevValue => {
+            return {
+                ...prevValue,
+                [name]: value
+            }
+        });
+        console.log(data)
+
+    }
+
+    const handleTime = (e)=> {
+        const{name,value}= e.target
+        console.log(name, value)
+        setTime(prevValue => {
+            return {
+                ...prevValue,
+                [name]: value
+            }
+        });
+    }
+
+
+
+    const handleDays = (e)=> {
+        let isChecked = e.target.checked;
+        if(isChecked) {
+            days_available.push(e.target.value);
+        } else {
+            const index = days_available.indexOf(e.target.value);
+            days_available.splice(index, 1)
+        }
+        console.log(days_available)
     }
 
     const handleSubmit=(e)=>{
-        alert("Successfully Submitted")
+        e.preventDefault();
+        axios.post("/registerSitter", {
+           ...data,
+           ...time,
+           days_available
+        }).then((res)=> {
+            setIsRegistered(res.data.isRegistered)
+            console.log(res)
+        }).catch(err=> {
+            console.log(err)
+        })
+        if(isRegistered) {
+            alert("Successfully Submitted")
         props.history.push("/sitterprofile");
+        } else {
+        props.history.push("/registration");
+
+        }
     }
 
     return (
@@ -212,74 +280,74 @@ function Reg(props) {
                     <p>We’re looking forward to hearing your responses to our questions about pet care!</p>
                     <div class="mb-3">
                         <h6><label for="exampleFormControlInput1" class="form-label" >Full name (As per Aadhar card)*</label></h6>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name" />
+                        <input type="text" name="name" class="form-control" onChange={handleChange} id="exampleFormControlInput1" placeholder="Enter your name" />
                     </div>
 
                     <div class="mb-3">
                         <h6><label for="exampleFormControlInput1" class="form-label">Email (As per Aadhar card)*</label></h6>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Email" />
+                        <input type="text" name="email" class="form-control" onChange={handleChange} id="exampleFormControlInput1" placeholder="Enter your Email" />
                     </div>
 
                     <div class="mb-3">
                         <h6><label for="exampleFormControlInput1" class="form-label">Aadhar card Number*</label></h6>
-                        <input type="text" name="aadharno" onChange={handleAadhar} class="form-control" id="exampleFormControlInput1" placeholder="Enter your aadhar number" />
+                        <input type="text" name="aadhar_number" onChange={handleChange} class="form-control" id="exampleFormControlInput1" placeholder="Enter your aadhar number" />
                     </div>
 
                     <div class="mb-3">
                         <h6><label for="exampleFormControlInput1" class="form-label">Mobile Number (As per Aadhar card)*</label></h6>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Mobile Number" />
+                        <input type="text" name="ph_no" class="form-control" onChange={handleChange} id="exampleFormControlInput1" placeholder="Enter your Mobile Number" />
                     </div>
 
                     <div class="mb-3">
-                        <h6><label for="exampleFormControlTextarea1" class="form-label">Address (As per Aadhar card)*</label></h6>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <h6><label for="exampleFormControlTextarea1" onChange={handleChange} class="form-label">Address (As per Aadhar card)*</label></h6>
+                        <textarea name="address" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
 
                     <h6><label for="exampleFormControlTextarea1" class="form-label">Days Available*</label></h6>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input class="form-check-input" onChange={handleDays} type="checkbox" value="sunday" id="flexCheckDefault" />
                         <label class="form-check-label" for="flexCheckDefault">
                             Sunday
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input class="form-check-input" onChange={handleDays} type="checkbox" value="monday" id="flexCheckDefault" />
                         <label class="form-check-label" for="flexCheckDefault">
                             Monday
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input class="form-check-input" onChange={handleDays} type="checkbox" value="tuesday" id="flexCheckDefault" />
                         <label class="form-check-label" for="flexCheckDefault">
                             Tuesday
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input class="form-check-input" onChange={handleDays} type="checkbox" value="wednesday" id="flexCheckDefault" />
                         <label class="form-check-label" for="flexCheckDefault">
                             Wednesday
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input class="form-check-input" onChange={handleDays} type="checkbox" value="thursday" id="flexCheckDefault" />
                         <label class="form-check-label" for="flexCheckDefault">
                             Thursday
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input class="form-check-input" onChange={handleDays} type="checkbox" value="friday" id="flexCheckDefault" />
                         <label class="form-check-label" for="flexCheckDefault">
                             Friday
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" />
+                        <input class="form-check-input " onChange={handleDays} type="checkbox" value="saturday" id="flexCheckDefault" />
                         <label class="form-check-label mb-3" for="flexCheckDefault">
                             Saturday
                         </label>
@@ -291,13 +359,13 @@ function Reg(props) {
                             <h6>From</h6>
                         </Form.Label>
                         <Col sm="1">
-                            <Form.Control className="from" type="time" />
+                            <Form.Control name="timing_from" onChange={handleTime} className="from" type="time" />
                         </Col>
                         <Form.Label column sm="1">
                             <h6 className="uss">To</h6>
                         </Form.Label>
                         <Col sm="1">
-                            <Form.Control className="to" type="time" />
+                            <Form.Control name="timing_to" onChange={handleTime} className="to" type="time" />
                         </Col>
                     </Form.Group>
 
@@ -361,7 +429,7 @@ function Reg(props) {
                     </div>
 
                     <h6><label for="exampleFormControlTextarea1" class="form-label">Number of pets you can take care of:*</label></h6>
-                    <div class="form-check">
+                    {/* <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                         <label class="form-check-label" for="flexCheckDefault">
                             1
@@ -387,11 +455,21 @@ function Reg(props) {
                         <label class="form-check-label" for="flexCheckDefault">
                             4
                         </label>
-                    </div>
+                    </div> */}
+
+                    <select onChange={handleChange} name="no_of_pets" id="pets_sit">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    </select> 
+                    <br />
+                    <br />
+
 
                     <div class="mb-3">
                         <h6><label for="exampleFormControlTextarea1" class="form-label">Why do you want to be a pet sitter?*</label></h6>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        <textarea class="form-control" name="description" onChange={handleChange} id="exampleFormControlTextarea1" rows="5"></textarea>
                     </div>
 
 

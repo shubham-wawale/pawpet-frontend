@@ -11,6 +11,9 @@ function Login(props) {
         password: ""
     });
 
+    const[isloggedin,setIsloggedin]=useState(false)
+
+
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -26,29 +29,29 @@ function Login(props) {
     function handleSubmit(e) {
         e.preventDefault();
         axios.post("/login", {
-            email: login.email,
-            password: login.password
+            email: "test4@gmail.com",
+            password: "test4"
         }).then((res)=> {
+            setIsloggedin(res.data.isLoggedIn)
             console.log(res)
         }).catch(err=> {
             console.log(err)
         })
         // let founduser = props.users.find(user => user.email === login.email)
 
-        // if (founduser) {
-        //     console.log(founduser)
-        //     // props.success(true)
-        //         alert("Successfully logged in")
-        //         props.history.push("/dashboard");
+        if (isloggedin) {
+                   // props.success(true)
+                alert("Successfully logged in")
+                props.history.push("/dashboard");
                 
             
-        // }
-        // else {
-        //     // props.error(true)
-        //     alert("Invalid Credentials")
-        //     console.log("usernotfound")
+        }
+        else {
+            // props.error(true)
+            alert("Invalid Credentials")
+            console.log("usernotfound")
             
-        // }
+        }
 
         // console.log(localStorage.getItem("normal_users"));    
     }
@@ -90,6 +93,7 @@ function Login(props) {
                         </div>
                     </div>
                 </form>
+
             </div>
 
         </>

@@ -20,8 +20,8 @@ import {DeleteIcon,ArrowBackIcon} from "@chakra-ui/icons";
 function SitterProfile() {
   const toast = useToast()
   const [sitter, setSitter] = useState({
-    name:"wtf",
-    location:"Dombivli",
+    name:"John",
+    location:"Thane,Maharashtra",
     charges:"250",
     number_of_pets:"1",
     days_available:["Monday", "Tuesday", "Wednesday"],
@@ -31,38 +31,38 @@ function SitterProfile() {
 
 });
 
-const bookings = [{
-      name_of_sitter:"Sonam",
-      amount:"500",
-      date: new Date(),
-      number_of_pets: "2"
-    },{
-      name_of_sitter:"Hailey",
-      amount:"750",
-      date: new Date(),
-      number_of_pets: "3"
-    },{
-      name_of_sitter:"Ash",
-      amount:"250",
-      date: new Date(),
-      number_of_pets: "1"
-}]
+// const bookings = [{
+//       name_of_sitter:"Sonam",
+//       amount:"500",
+//       date: new Date(),
+//       number_of_pets: "2"
+//     },{
+//       name_of_sitter:"Hailey",
+//       amount:"750",
+//       date: new Date(),
+//       number_of_pets: "3"
+//     },{
+//       name_of_sitter:"Ash",
+//       amount:"250",
+//       date: new Date(),
+//       number_of_pets: "1"
+// }]
 
-const transaction = [{
-  transaction_id:"2344",
-  transaction_amount:"500",
-  transaction_date:new Date()
-},
-{
-  transaction_id:"2345",
-  transaction_amount:"250",
-  transaction_date:new Date()
-},
-{
-  transaction_id:"2346",
-  transaction_amount:"750",
-  transaction_date:new Date()
-}]
+// const transaction = [{
+//   transaction_id:"2344",
+//   transaction_amount:"500",
+//   transaction_date:new Date()
+// },
+// {
+//   transaction_id:"2345",
+//   transaction_amount:"250",
+//   transaction_date:new Date()
+// },
+// {
+//   transaction_id:"2346",
+//   transaction_amount:"750",
+//   transaction_date:new Date()
+// }]
 
 function handleChange(e) {
   const { name, value } = e.target;
@@ -81,10 +81,10 @@ function myFunction(e) {
   return (
     <>
     <Wrap spacing="100px" m="100px" mt="30px">
-      <Box width="285px" height="650px" borderWidth="10px" borderRadius="lg" p="20px">
+      <Box width="400px" height="650px" borderWidth="10px" borderRadius="lg" p="20px">
         <Stack direction="column">
           <Avatar size="2xl" name="John"
-            src="" ml="46px"/>
+            src="" ml="110px"/>
           <Heading textAlign="center" color="gray">{sitter.name} </Heading>
           <Text textAlign="center" color="gray">{sitter.location}</Text>
         </Stack>
@@ -160,7 +160,7 @@ function myFunction(e) {
             <Stack>
             <Stat>
   <StatLabel>Total Earnings</StatLabel>
-  <StatNumber>Rs 00.00</StatNumber>
+  <StatNumber>Rs 000.00</StatNumber>
   <StatHelpText>Sep 12 - Sep 27</StatHelpText>
     </Stat>
     </Stack>
@@ -202,7 +202,7 @@ function myFunction(e) {
         </Thead>
         <Tbody>
 
-        {transaction.map((transactions,index) => {
+        {/* {transaction.map((transactions,index) => {
            return (
             <Tr>
             <Td>{index+1}</Td>
@@ -215,7 +215,7 @@ function myFunction(e) {
             })}</Td>
             </Tr> 
            )   
-          })}
+          })} */}
 
 
           {/* <Tr>
@@ -265,7 +265,7 @@ function myFunction(e) {
         </Thead>
         <Tbody>
 
-{bookings.map((booking,index) => {
+{/* {bookings.map((booking,index) => {
            return (
             <Tr>
             <Td>{index+1}</Td>
@@ -279,7 +279,7 @@ function myFunction(e) {
             <Td>{booking.number_of_pets}</Td>
             </Tr> 
            )   
-          })}
+          })} */}
 
         </Tbody>
       </Table> 
