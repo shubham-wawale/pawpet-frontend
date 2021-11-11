@@ -90,7 +90,7 @@ function Sitterinfo(props) {
                     <div className="col-10 mx-auto">
                         <div className="col-md-6 pt-4 order-2 order-lg-1 d-flex justify-content-center flex-column">
                             <div className="hinfo">
-                                <h5>About Sundar</h5>
+                                <h5>About</h5>
                                 <p>{data.desc}</p>
                                 <h5>Skills and Qualifications</h5>
 

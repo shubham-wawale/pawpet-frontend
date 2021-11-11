@@ -33,24 +33,24 @@ function Login(props) {
         }).catch(err=> {
             console.log(err)
         })
-        let founduser = props.users.find(user => user.email === login.email)
+        // let founduser = props.users.find(user => user.email === login.email)
 
-        if (founduser) {
-            console.log(founduser)
-            // props.success(true)
-                alert("Successfully logged in")
-                props.history.push("/dashboard");
+        // if (founduser) {
+        //     console.log(founduser)
+        //     // props.success(true)
+        //         alert("Successfully logged in")
+        //         props.history.push("/dashboard");
                 
             
-        }
-        else {
-            // props.error(true)
-            alert("Invalid Credentials")
-            console.log("usernotfound")
+        // }
+        // else {
+        //     // props.error(true)
+        //     alert("Invalid Credentials")
+        //     console.log("usernotfound")
             
-        }
+        // }
 
-        console.log(localStorage.getItem("normal_users"));    
+        // console.log(localStorage.getItem("normal_users"));    
     }
 
     return (
