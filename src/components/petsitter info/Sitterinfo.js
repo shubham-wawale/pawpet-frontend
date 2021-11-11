@@ -9,6 +9,7 @@ import car from "./car.png"
 import house from "./house.png"
 
 
+
 function Sitterinfo(props) {
     const[data,setData]=useState({
         
@@ -142,7 +143,8 @@ function Sitterinfo(props) {
                         <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             Book Sitter
                         </button>
-
+                        {/* <button onclick="location.href='./'" type="" className="view-modal">View Modal</button> */}
+                        {/* <Link to="/share">share profile</Link> */}
                         <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered">
                                 <div className="modal-content">

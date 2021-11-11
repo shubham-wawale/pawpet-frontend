@@ -81,11 +81,11 @@ function Login(props) {
                         <p className="liw">Log in with</p>
 
                         <div className="icon">
-                            <a href="#" class="fa fa-facebook"></a>
-                            <a href="#" class="fa fa-twitter"></a>
-                            <a href="#" class="fa fa-google"></a>
-                            <a href="#" class="fa fa-instagram"></a>
-                            <a href="#" class="fa fa-youtube"></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparse.com" class="fa fa-facebook"></a>
+                            <a href="https://twitter.com/" class="fa fa-twitter"></a>
+                            <a href="https://accounts.google.com/AccountChooser/identifier?flowName=GlifWebSignIn&flowEntry=AccountChooser" class="fa fa-google"></a>
+                            <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                            <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
 
                         </div>
                     </div>

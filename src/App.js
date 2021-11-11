@@ -10,6 +10,7 @@ import UserProfile from "./components/profile/UserProfile";
 import Landingsignup from "./components/landing page/Landingsignup";
 import PetsitterCards from "./components/petsitter info/PetsitterCards";
 import Sitterinfo from "./components/petsitter info/Sitterinfo";
+
 import {petsitters,transactions,booking} from "./data"
 
 import {
@@ -95,6 +96,7 @@ function App() {
             <Registration petsitters={petsitters} transactions={transactions} booking={booking}/>
             </Route>
 
+           
         </Switch>
         </Router>
     </div>

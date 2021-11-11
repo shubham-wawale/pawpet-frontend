@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./signup.css"
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router'
@@ -10,14 +10,14 @@ function Signup(props) {
     });
 
     function handleChange(e) {
-        const {name, value} = e.target;
-        setSignup( prevValue => {
+        const { name, value } = e.target;
+        setSignup(prevValue => {
             return {
                 ...prevValue,
                 [name]: value
             }
-        } );
-        
+        });
+
     }
 
     function handleSubmit(e) {
@@ -48,19 +48,28 @@ function Signup(props) {
                 <Link to="/">Sign-in</Link> here</p>
                 <p className="liw">Sign-up with</p>
 
-                <div className="icon">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-google"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="#" class="fa fa-youtube"></a>
+                {/* <form className="signup_form">
+                    <div className="foram">
+                        <h2>Sign-up Here</h2>
+                        <input type="email" name="email" placeholder="Enter your Email" onChange={handleChange} required />
+                        <input type="password" name="password" placeholder="Enter your Password " onChange={handleChange} required />
+                        <button className="bhutton" onClick={handleSubmit}>Sign-up</button>
+                        <p className="lenk">Already have an account? <br />
+                            <Link to="/">Sign-in</Link> here</p>
+                        <p className="liw">Sign-up with</p> */}
 
-                </div>
+                        <div className="icon">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparse.com" class="fa fa-facebook"></a>
+                            <a href="https://twitter.com/" class="fa fa-twitter"></a>
+                            <a href="https://accounts.google.com/AccountChooser/identifier?flowName=GlifWebSignIn&flowEntry=AccountChooser" class="fa fa-google"></a>
+                            <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                            <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+                        </div>
+                    </div>
+                </form>
+
             </div>
-            </form>
 
-        </div>
-        
         </>
 
     );
