@@ -1,3 +1,0 @@
-# pawpet-frontend
-
-This kjdfbkjdnfkdnflkdsf.
