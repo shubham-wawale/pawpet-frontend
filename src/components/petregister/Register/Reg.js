@@ -196,6 +196,8 @@ function Reg() {
                 </div>
                 
             </section>
+            
+            {/* Added placeholders in form */}
 
             <form className="reg_form">
             <div className="reg">
