@@ -73,7 +73,7 @@ function Sitterinfo() {
                 </div>
 
             </div>
-
+            {/* //added payment portal registration using PayU */}
             <div className="chhard">
                 <div className="card bor" >
                     <h5>Services & Rates</h5>
