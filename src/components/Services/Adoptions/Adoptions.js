@@ -7,6 +7,8 @@ import Results from "./Results";
 import axios from "axios"
 import "./Adoption.css";
 import { Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react"
+import { Image } from "@chakra-ui/image"
+import notFound from "./browser2.png"
 
 const Adoptions = () => {
 
@@ -82,7 +84,7 @@ const Adoptions = () => {
   const [isLoading, setLoading] = useState(true);
   const [location,setLocation] = useState("")
 
-  const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJaeUJpYlFreEdSdGlmTG9zSDZlM3hOd2Q2aEZ5ZDN6RWRvVW1ZZXJxSGlzbkFvUHRCOCIsImp0aSI6ImRiOTI1NjRkNjYwNmQwOWJiNDg3MjExNzkxMGNjOTU5ZWZiYjg5ZjdhZWNjY2IxZjM3ZTU2MTY2MWQxNjEwNTY4YzUyOTVmZjgwZmQyYjdkIiwiaWF0IjoxNjMzOTQxNDAwLCJuYmYiOjE2MzM5NDE0MDAsImV4cCI6MTYzMzk0NTAwMCwic3ViIjoiIiwic2NvcGVzIjpbXX0.SzlBo1C2jaJArNtvZZXQ0gxgB-W7B1-eriwyBumLxteegC1LYChWXowfC7_DnYPQfaGnt_Ob1snZTfecks8JDcYCqD_QoPY0jZ4PBuNN0_COUQryx2-1iCZ_X0vbzzONyV4rNL93uyYs2r_V7oNwgCB6P_1WtFuTRc5Gp6M2KNVLwnkuCRKh1sLTLot6zaLJXgnR3qMjNgxx7_q_iyLp241VX7UiSvW-AQ7gyS9BF-EwQ0bANF-nygMHmLmojZJ9kN80lnvVwiv9kNqJZggPHWOYMg7jM2XqP4gnN_Kt8tAmclfQRLhowlZVfisq7gASM2f3yddP5isD27O5csyySg"
+  const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJaeUJpYlFreEdSdGlmTG9zSDZlM3hOd2Q2aEZ5ZDN6RWRvVW1ZZXJxSGlzbkFvUHRCOCIsImp0aSI6IjIzNjZmN2JkOTc4OTQzYTkwYmI2MTBjZDYyMWM1ZDZkNGVlZjBiNDJlNmUzMjFkNDk5ZjliZWNkMWUwMmJlOWI4MGY1YWEyMmMyMzhkYzVjIiwiaWF0IjoxNjY1OTE0Njg2LCJuYmYiOjE2NjU5MTQ2ODYsImV4cCI6MTY2NTkxODI4Niwic3ViIjoiIiwic2NvcGVzIjpbXX0.fcMZaI_eGIrplqrq4yh8S7haCVbYPtC99IKFiNfqRiaZmt2viPIwwBDJ7LMCZDl_TPXUd3fueh-7o6hBbMy-djQ-A6JXaik7hIT34HAYbF_nZJ5fHPkayMvlBzbijllFmE_Fob_ynps_qgN_Wuau-RJL9JA-6-L1kk4QuH5tYTDgQEsxY7BXU1ob7UrCZP_tjawORrBRIdTFt14fQFGh6VFQmqwvf5clwRJbjw_JfayZBBEOEkYXZH1FFl0w9F9Q7OpCB6kcpMLFsc026VDPuGT-S_65dAwQJBmfF9SBHhKtNPpp4vTGFQN5zyabXgLkCzKq8GnrswScOZN8MjmESQ"
   const config = {
     headers: { Authorization: `Bearer ${token}` },
     params: {
@@ -201,7 +203,22 @@ const Adoptions = () => {
           </>
         ) : (
           <Box className="adoptionResultScroll" ml="30px" mt="20px" h="620px" w="79.5%" borderRadius="lg" overflowX="hidden" overflowY="scroll" >
-            <Results data={data} />
+            {data.animals ? 
+            <Results data={data} /> :
+            <Box ml="10px" mt="20px">
+                <Text fontSize="2xl" color="gray.400" fontWeight="semibold">------Sorry, we couldn't process the request-----------------</Text>
+            
+            <Image
+            marginTop="150px"
+            marginLeft="400px"
+            width="250px"
+            height="250px"
+             src={notFound}
+            />
+            
+            </Box>
+            }
+            
           </Box>
         )
         }
