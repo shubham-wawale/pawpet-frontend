@@ -13,7 +13,7 @@ function Navbar() {
         <ul className="janiye">
           <li><a href="#">HOME</a></li>
           <li><a href="#">ABOUT</a></li>
-          <li><a href="#">SERVICE</a></li>
+          <li><a href="/servicesTabs">SERVICE</a></li>
           <li><a href="#">CONTACT</a></li>
           <Link to="/Signup"> <button className="crtacc">Create Account</button></Link>
         </ul>
