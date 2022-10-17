@@ -1,7 +1,9 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
+import { Form, Row, Col } from 'react-bootstrap'
 import './Reg.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from "react-bootstrap"
+import { Link } from "react-router-dom";
+
 
 // import coff from "../Images/twocat.jpg";
 import web5 from "../Images/info.png";
@@ -13,20 +15,27 @@ import web19 from "../Images/cat1.png";
 import web20 from "../Images/dog1.png";
 import web21 from "../Images/cute.png";
 import web22 from "../Images/catdog.png";
+import { withRouter } from 'react-router';
 
 
 
-function Reg() {
-    const[aadharnumber,setaadharnumber]=useState(
+function Reg(props) {
+    const [aadharnumber, setaadharnumber] = useState(
         ""
     )
-    const handleAadhar=(e)=>{
-    console.log(e.target.name)
-    console.log(e.target.value)
+    const handleAadhar = (e) => {
+        console.log(e.target.name)
+        console.log(e.target.value)
     }
+
+    const handleSubmit=(e)=>{
+        alert("Successfully Submitted")
+        props.history.push("/sitterprofile");
+    }
+
     return (
         <>
-    
+
             {/* <div>
                 <Container>
                     <figure className="positon-relative">
@@ -194,193 +203,212 @@ function Reg() {
 
 
                 </div>
-                
+
             </section>
             
             {/* Added placeholders in form */}
 
             <form className="reg_form">
-            <div className="reg">
-                <h2>Pet Sitter Application</h2>
-                <p>We’re looking forward to hearing your responses to our questions about pet care!</p>
-            <div class="mb-3">
-                    <h6><label for="exampleFormControlInput1" class="form-label" >Full name (As per Aadhar card)*</label></h6>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name"/>
-                </div>
+                <div className="reg">
+                    <h2>Pet Sitter Application</h2>
+                    <p>We’re looking forward to hearing your responses to our questions about pet care!</p>
+                    <div class="mb-3">
+                        <h6><label for="exampleFormControlInput1" class="form-label" >Full name (As per Aadhar card)*</label></h6>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name" />
+                    </div>
 
-                <div class="mb-3">
-                    <h6><label for="exampleFormControlInput1" class="form-label">Email (As per Aadhar card)*</label></h6>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Email"/>
-                </div>
+                    <div class="mb-3">
+                        <h6><label for="exampleFormControlInput1" class="form-label">Email (As per Aadhar card)*</label></h6>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Email" />
+                    </div>
 
-                <div class="mb-3">
-                    <h6><label for="exampleFormControlInput1" class="form-label">Aadhar card Number*</label></h6>
-                    <input type="" name="aadharno" onChange={handleAadhar} class="form-control" id="exampleFormControlInput1" placeholder="Enter your aadhar number" />
-                </div>
+                    <div class="mb-3">
+                        <h6><label for="exampleFormControlInput1" class="form-label">Aadhar card Number*</label></h6>
+                        <input type="text" name="aadharno" onChange={handleAadhar} class="form-control" id="exampleFormControlInput1" placeholder="Enter your aadhar number" />
+                    </div>
 
-                <div class="mb-3">
-                    <h6><label for="exampleFormControlInput1" class="form-label">Mobile Number (As per Aadhar card)*</label></h6>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Mobile Number" />
-                </div>
+                    <div class="mb-3">
+                        <h6><label for="exampleFormControlInput1" class="form-label">Mobile Number (As per Aadhar card)*</label></h6>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Mobile Number" />
+                    </div>
 
-                <div class="mb-3">
-                    <h6><label for="exampleFormControlTextarea1" class="form-label">Address (As per Aadhar card)*</label></h6>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
+                    <div class="mb-3">
+                        <h6><label for="exampleFormControlTextarea1" class="form-label">Address (As per Aadhar card)*</label></h6>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
 
-                <h6><label for="exampleFormControlTextarea1" class="form-label">Days Available*</label></h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Sunday
-                    </label>
-                </div>
+                    <h6><label for="exampleFormControlTextarea1" class="form-label">Days Available*</label></h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Sunday
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Monday
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Monday
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Tuesday
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Tuesday
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Wednesday
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Wednesday
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Thursday
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Thursday
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Friday
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Friday
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Saturday
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label mb-3" for="flexCheckDefault">
+                            Saturday
+                        </label>
+                    </div>
 
-                <h6><label for="exampleFormControlTextarea1" class="form-label">Are you 18 years or older?*</label></h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Yes
-                    </label>
-                </div>
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+                        <h6>Time Available:</h6>
+                        <Form.Label column sm="1">
+                            <h6>From</h6>
+                        </Form.Label>
+                        <Col sm="1">
+                            <Form.Control className="from" type="time" />
+                        </Col>
+                        <Form.Label column sm="1">
+                            <h6 className="uss">To</h6>
+                        </Form.Label>
+                        <Col sm="1">
+                            <Form.Control className="to" type="time" />
+                        </Col>
+                    </Form.Group>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        No
-                    </label>
-                </div>
+                    <h6><label for="exampleFormControlTextarea1" class="form-label">Are you 18 years or older?*</label></h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Yes
+                        </label>
+                    </div>
 
-                <h6><label for="exampleFormControlTextarea1" class="form-label">Can you stay at client's home overnight?*</label></h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Yes
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            No
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        No
-                    </label>
-                </div>
+                    <h6><label for="exampleFormControlTextarea1" class="form-label">Can you stay at client's home overnight?*</label></h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Yes
+                        </label>
+                    </div>
 
-                <h6><label for="exampleFormControlTextarea1" class="form-label">Which pets are you willing to take care of?*</label></h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Dogs
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            No
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Cats
-                    </label>
-                </div>
+                    <h6><label for="exampleFormControlTextarea1" class="form-label">Which pets are you willing to take care of?*</label></h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Dogs
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Birds
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Cats
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Fish
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Birds
+                        </label>
+                    </div>
 
-                <h6><label for="exampleFormControlTextarea1" class="form-label">Number of pets you can take care of:*</label></h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        1
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Fish
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        2
-                    </label>
-                </div>
+                    <h6><label for="exampleFormControlTextarea1" class="form-label">Number of pets you can take care of:*</label></h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            1
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        3
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            2
+                        </label>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label" for="flexCheckDefault">
-                        4
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            3
+                        </label>
+                    </div>
 
-                <div class="mb-3">
-                    <h6><label for="exampleFormControlTextarea1" class="form-label">Why do you want to be a pet sitter?*</label></h6>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            4
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <h6><label for="exampleFormControlTextarea1" class="form-label">Why do you want to be a pet sitter?*</label></h6>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    </div>
+
+
+                    <button type="button" class="btn btn-primary mb-3" onClick={handleSubmit}>
+                        Submit
+                    </button>
+
+                    
                 </div>
-                
-                
-                <button type="button" class="btn btn-success mb-3">Submit</button>
-       
-             </div>
-             </form>
-            
+            </form>
+
 
         </>
 
     );
 };
 
-export default Reg;
+export default withRouter(Reg) ;

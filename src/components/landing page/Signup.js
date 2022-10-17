@@ -24,6 +24,7 @@ function Signup(props) {
         // console.log(signup);
         e.preventDefault();
         props.onadd(signup)
+        alert("User added successfully")
         props.history.push("/");
     }
     return (

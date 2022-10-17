@@ -83,7 +83,6 @@ const Adoptions = () => {
   const [parameters, setParameters] = useState({})
   const [isLoading, setLoading] = useState(true);
   const [location,setLocation] = useState("")
-
   const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJaeUJpYlFreEdSdGlmTG9zSDZlM3hOd2Q2aEZ5ZDN6RWRvVW1ZZXJxSGlzbkFvUHRCOCIsImp0aSI6IjIzNjZmN2JkOTc4OTQzYTkwYmI2MTBjZDYyMWM1ZDZkNGVlZjBiNDJlNmUzMjFkNDk5ZjliZWNkMWUwMmJlOWI4MGY1YWEyMmMyMzhkYzVjIiwiaWF0IjoxNjY1OTE0Njg2LCJuYmYiOjE2NjU5MTQ2ODYsImV4cCI6MTY2NTkxODI4Niwic3ViIjoiIiwic2NvcGVzIjpbXX0.fcMZaI_eGIrplqrq4yh8S7haCVbYPtC99IKFiNfqRiaZmt2viPIwwBDJ7LMCZDl_TPXUd3fueh-7o6hBbMy-djQ-A6JXaik7hIT34HAYbF_nZJ5fHPkayMvlBzbijllFmE_Fob_ynps_qgN_Wuau-RJL9JA-6-L1kk4QuH5tYTDgQEsxY7BXU1ob7UrCZP_tjawORrBRIdTFt14fQFGh6VFQmqwvf5clwRJbjw_JfayZBBEOEkYXZH1FFl0w9F9Q7OpCB6kcpMLFsc026VDPuGT-S_65dAwQJBmfF9SBHhKtNPpp4vTGFQN5zyabXgLkCzKq8GnrswScOZN8MjmESQ"
   const config = {
     headers: { Authorization: `Bearer ${token}` },

@@ -48,9 +48,6 @@ function Header(props) {
                                 <div className="col-md-3">
                                     <label>I'm Looking For</label>
                                     <select id="locate" className="form-control " >
-                                        <option value="Pet-sitters" > Select Service </option>
-
-                                        <option value="pet-adoption" > Pet Adoption </option>
 
                                         {/* <option value="pet-walking" > Pet Walking </option> */}
 
@@ -58,9 +55,9 @@ function Header(props) {
 
                                     </select>
 
-                                     <div className="arrow">
+                                     {/* <div className="arrow">
                                         <img src={web9} alt="" />
-                                    </div> 
+                                    </div>  */}
 
                                     {/* <div className="input-img">
                                     
